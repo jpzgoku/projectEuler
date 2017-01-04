@@ -4,7 +4,7 @@ fibonacci 1 = 1
 fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
 
 setMax :: Integer -> [Integer]
-setMax n = takeWhile (< n) (filterNums)
+setMax n = takeWhile (< n) filterNums
 
 filterNums :: [Integer]
 filterNums = [fibonacci x| x <- [1..], fibonacci x `mod` 2 == 0]
