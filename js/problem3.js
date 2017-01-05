@@ -45,7 +45,7 @@ function largestPrimeFactor(array) {
 	var largeToSmall = array.sort(function(a, b){return b-a});
 	console.log(largeToSmall[0]);
 	return largeToSmall[0];
-}
+};
 
 findPrimeNumber(30000);
 findPrimeFactor(600851475143);

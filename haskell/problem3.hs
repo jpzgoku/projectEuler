@@ -11,4 +11,3 @@ testForPrime :: Eq t => [t] -> Bool
 testForPrime x = x == []
 
 answer = findPrimeNumbers (findWholeMultiples 600851475143)
-

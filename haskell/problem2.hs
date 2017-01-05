@@ -1,15 +1,12 @@
-fibonacci :: Integer -> Integer
+fibonacci :: Int -> Int
 fibonacci 0 = 1
 fibonacci 1 = 1
 fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
 
-setMax :: Integer -> [Integer]
+setMax :: Int -> [Int]
 setMax n = takeWhile (< n) filterNums
 
-filterNums :: [Integer]
+filterNums :: [Int]
 filterNums = [fibonacci x| x <- [1..], fibonacci x `mod` 2 == 0]
 
-arraySum :: [Integer] -> Integer
-arraySum x = sum x
-
-answer = arraySum (setMax 4000000)
+answer = sum (setMax 4000000)

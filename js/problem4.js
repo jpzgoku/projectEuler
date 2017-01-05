@@ -1,11 +1,6 @@
-var palindromeNumbers = [];
-
-function palindromic(n) {
-	if (n === reverseNum(n)) {
-		return true;
-	}
-	return false;
-};
+/*function palindromic(n) {
+	return (n === reverseNum(n)) ? true : false;
+};*/
 
 function reverseNum(n) {
 	var numArray = [];
@@ -16,29 +11,23 @@ function reverseNum(n) {
 	return Number(numArray.join(''));
 };
 
-function feedNumbers(start, end) {
+function palindrome(start, end) {
+	var array = []
 	for (var i = start; i < end; i++) {
-		var first = i;
 		for (var j = start; j < end; j++) {
-			var second = j
-			var answer = i * j;
-			if (palindromic(answer)) {
-				palindromeNumbers.push(i * j);
+			var product = i * j
+			if (product === reverseNum(product)) {
+				array.push(product);
 			}	
 		}
 	}
-	return largestPalNum();
+	return array;
 };
 
-function largestPalNum() {
-	var largest = 0;
-	for (var i = 0; i < palindromeNumbers.length; i++) {
-		if (palindromeNumbers[i] > largest) {
-			largest = palindromeNumbers[i];
-		}
-	}
-	console.log(largest);
-	return largest;
+function max(array) {
+	var reverseArray = array.sort(function(a, b){return b-a});
+	console.log(reverseArray[0]);
+	return reverseArray[0];
 };
 
-feedNumbers(100, 1000);
+max(palindrome(100, 1000));
