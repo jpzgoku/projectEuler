@@ -1,15 +1,5 @@
 var findPythogoreanTriplet = function(sum) {
-
-	function isPythagoreanTriplet(a, b, c) {
-		return (Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2)) ? true : false
-	};
-
-	function findCorrectSum(a, b, c, sum) {
-		return (a + b + c === sum) ? true : false
-	};
-
 	var pythagoreanTriplets = [];
-	
 	for (var c = 3; c < sum ; c++) {
 		for (var b = 2; b < c; b++) {
 			for (var a = 1; a < b; a++) {
@@ -21,6 +11,14 @@ var findPythogoreanTriplet = function(sum) {
 	}
 	console.log(pythagoreanTriplets);
 	return pythagoreanTriplets;
+
+	function isPythagoreanTriplet(a, b, c) {
+		return (Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2)) ? true : false
+	};
+
+	function findCorrectSum(a, b, c, sum) {
+		return (a + b + c === sum) ? true : false
+	};
 };
 
 function allProducts(array) {
@@ -30,4 +28,4 @@ function allProducts(array) {
 	});
 };
 
-allProducts(findPythogoreanTriplet(1200));
+allProducts(findPythogoreanTriplet(1000));

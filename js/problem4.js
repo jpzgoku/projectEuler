@@ -1,7 +1,3 @@
-/*function palindromic(n) {
-	return (n === reverseNum(n)) ? true : false;
-};*/
-
 function reverseNum(n) {
 	var numArray = [];
 	var word = String(n);
@@ -11,7 +7,7 @@ function reverseNum(n) {
 	return Number(numArray.join(''));
 };
 
-function palindrome(start, end) {
+var palindrome = function(start, end) {
 	var array = []
 	for (var i = start; i < end; i++) {
 		for (var j = start; j < end; j++) {

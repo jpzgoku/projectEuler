@@ -1,25 +1,26 @@
-var primeN = [];
-
-function findPrimeNumber(max) {
+var primeNumbers = function(max) {
+	var array = []
 	for (var i = 2; i < max; i ++) {
-		testNumber(i);
-	};
-	return primeN;
-};
-
-function testNumber(num) {
-	for (var i = 2; i < num; i++) {
-		if (num % i === 0) {
-			return false
+		if (isItPrime(i)) {
+			array.push(i);
 		}
 	}
-	return primeN.push(num);
+	return array;
 };
 
-function findPlace(n) {
-	console.log(primeN[n - 1]);
-	return primeN[n];
-}
+function isItPrime(num) {
+	var saveTime = Math.ceil(num /2) + 1;
+	for (var i = 2; i < saveTime; i++) {
+		if (num % i === 0) {
+			return false;
+		}
+	}
+	return true;
+};
 
-findPrimeNumber(110000);
-findPlace(10001);
+function findPlace(n, array) {
+	console.log(array[n - 1]);
+	return array[n];
+};
+
+findPlace(10001, primeNumbers(110000));

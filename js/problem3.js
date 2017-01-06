@@ -1,44 +1,32 @@
-var primeN = [];
-var primeF = [];
+function isItPrime(num) {
+	var saveTime = Math.ceil(num /2) + 1;
+	for (var i = 2; i < saveTime; i++) {
+		if (num % i === 0) {
+			return false;
+		}
+	}
+	return true;
+};
 
-function findPrimeNumber(max) {
-	for (var i = 2; i < max; i ++) {
-		testNumber(i);
+var primeFactors = function(num) {
+	var array = [];
+	findPrimeF(num);
+
+	function findPrimeF(num) {
+		if (isItPrime(num)) {
+			return array.push(num);
+		}
+		for (var i = 2; i < num; i ++) {
+			if (num % i === 0) {
+				var n1 = i;
+				var n2 = num / i;
+				findPrimeF(n1);
+				return findPrimeF(n2);
+			}
+		}
 	};
-	return primeN;
-};
-
-function testNumber(num) {
-	for (var i = 2; i < num; i++) {
-		if (num % i === 0) {
-			return false;
-		}
-	}
-	return primeN.push(num);
-};
-
-function findPrimeFactor(num) {
-	if (checkForPrimeNum(num)) {
-		return primeF.push(num);
-	}
-	for (var i = 2; i < num; i ++) {
-		if (num % i === 0) {
-			var n1 = i;
-			var n2 = num / i;
-			findPrimeFactor(n1);
-			findPrimeFactor(n2);
-			return false;
-		}
-	}
-};
-
-function checkForPrimeNum(n) {
-	for (var i = 0; i < primeN.length; i++) {
-		if (n === primeN[i]) {
-			return true;
-		}
-	}
-	return false;
+	console.log(array);
+	return array;
 };
 
 function largestPrimeFactor(array) {
@@ -47,6 +35,5 @@ function largestPrimeFactor(array) {
 	return largeToSmall[0];
 };
 
-findPrimeNumber(30000);
-findPrimeFactor(600851475143);
-largestPrimeFactor(primeF);
+largestPrimeFactor(primeFactors(224));
+largestPrimeFactor(primeFactors(600851475143));
