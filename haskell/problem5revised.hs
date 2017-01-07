@@ -5,7 +5,7 @@ stop :: [Bool] -> [Bool]
 stop x = takeWhile ( /= False) x
 
 checkLength :: Foldable t => t a -> Int -> Bool
-checkLength list num = length list  == num
+checkLength list num = length list == num
 
 findSmMul :: Int -> Int -> [Int]
 findSmMul xs max =[x | x <- [10..xs], checkLength (stop (getTFList x max)) max]

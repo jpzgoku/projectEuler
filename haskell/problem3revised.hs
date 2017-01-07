@@ -14,7 +14,19 @@ If it finds a singe False I want it to return False -}
 isItPrime :: Integral a => a -> [a] -> [Bool]
 isItPrime num list = [num `mod` x == 0| x <- list]
 
+-- I'm looking for a way to stop the function and return a false value if an 'x' value is found.
+
 answer = stop (isItPrime 20 (roundList (halfMultiples 20)))
+
+answer2 = isItPrime 20 (roundList (halfMultiples 20))
+
+{-Dosne't work and I don't know why
+check :: [Bool] -> Bool
+check (x:xs)
+    | x == False = False
+    | x == True = check xs
+    | otherwise = True
+-}
 
 {-function isItPrime(num) {
 	var saveTime = Math.ceil(num /2) + 1;
