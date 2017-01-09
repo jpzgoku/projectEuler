@@ -1,11 +1,11 @@
-var primeNumbers = function(max) {
-	var array = []
+var sumOf = function(max, func) {
+	sum = 0;
 	for (var i = 2; i < max; i ++) {
-		if (isItPrime(i)) {
-			array.push(i);
+		if (func(i)) {
+			sum = sum + i;
 		}
 	}
-	return array;
+	return sum;
 };
 
 function isItPrime(num) {
@@ -18,19 +18,4 @@ function isItPrime(num) {
 	return true;
 };
 
-function arraySum(array) {
-	var sum = 0;
-	for (var i = 0; i < array.length; i++) {
-		sum = sum + array[i];
-	}
-	console.log(sum);
-	return sum;
-};
-
-/*var answer = function(n) {
-	return arraySum(primeNumbers(n));
-};
-
-answer(2000000)*/
-
-arraySum(primeNumbers(2000000));
+console.log(sumOf(2000000, isItPrime));

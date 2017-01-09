@@ -15,7 +15,8 @@ function squareOfTheSum(max) {
 };
 
 function findTheDifference(callback1, callback2) {
-	return callback1 - callback2;
+	return (callback1 > callback2) ? callback1 - callback2 : callback2 - callback1
 };
 
-findTheDifference(squareOfTheSum(100), sumOfSquares(100));
+console.log(findTheDifference(squareOfTheSum(100), sumOfSquares(100)));
+console.log(findTheDifference(sumOfSquares(100), squareOfTheSum(100)));

@@ -8,7 +8,6 @@ function findGreatestProduct(numString, numOfDigits) {
 			biggestProduct = sum;
 		}
 	}
-	console.log(biggestProduct);
 	return biggestProduct;
 };
 
@@ -18,6 +17,6 @@ function makeEquation(numString, start, numOfDigits) {
 		sum = sum * Number(numString.charAt(start + i));
 	}
 	return sum;
-}
+};
 
-findGreatestProduct(thousandDigitNumber, 13);
+console.log(findGreatestProduct(thousandDigitNumber, 13));
