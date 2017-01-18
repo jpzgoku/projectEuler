@@ -1,3 +1,5 @@
+// Too brute force. Need a way to cut down the processing time.
+
 var sumOf = function(max, func) {
 	sum = 0;
 	for (var i = 2; i < max; i ++) {

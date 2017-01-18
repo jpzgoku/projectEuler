@@ -10,7 +10,7 @@ function isItPrime(num) {
 
 function nth(num, callback) {
 	var arr = [];
-	for (var i = 2; i < 1000000; i++) {
+	for (var i = 2; i < Infinity; i++) {
 		if (callback(i)) {
 			arr.push(i);
 			if (arr.length === num) {

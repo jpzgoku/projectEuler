@@ -1,5 +1,5 @@
 function smallestMultiple(digit) {
-	for (var i = 1; i < 1000000000; i++) {
+	for (var i = 1; i < Infinity ; i++) {
 		if (isDivisable(i, digit)) {
 			console.log(i);
 			return i;
