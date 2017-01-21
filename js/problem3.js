@@ -10,9 +10,7 @@ function isItPrime(num) {
 
 var primeFactors = function(num) {
 	var array = [];
-	findPrimeF(num);
-
-	function findPrimeF(num) {
+	var findPrimeF = function(num) {
 		if (isItPrime(num)) {
 			return array.push(num);
 		}
@@ -25,6 +23,8 @@ var primeFactors = function(num) {
 			}
 		}
 	};
+
+	findPrimeF(num);
 	console.log(array);
 	return array;
 };

@@ -1,9 +1,6 @@
 var collatz = function(n) {
   var arr = [];
-  findMultiples(n);
-  return arr;
-
-  function findMultiples(n) {
+  var findMultiples = function(n) {
     arr.push(n);
     if (n === 1) {
       return arr
@@ -14,7 +11,10 @@ var collatz = function(n) {
       var x = (n * 3) + 1;
       return findMultiples(x);
     }
-  }
+  };
+
+  findMultiples(n);
+  return arr;
 };
 
 function longestSequence(max) {
