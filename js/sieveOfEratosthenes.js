@@ -1,14 +1,11 @@
 var sieveOfEratosthenes = function(n) {
-
 	var numbers = function() {
 		arr = [];
 		for (var i = 2; i <= n; i++) {
 			arr.push(i);
 		}
 		return arr;
-	};
-
-	var pArray = numbers();
+	}();
 
 	for (var i = 0; i < Math.ceil(n / 2); i++) {
 		if (removeMultiples(i)[1] === 0) {
@@ -19,18 +16,16 @@ var sieveOfEratosthenes = function(n) {
 
 	function removeMultiples(arrPosition) {
 		var times = 0
-		var j = pArray[arrPosition];
+		var j = numbers[arrPosition];
 		for (var p = j + j; p <= n; p = p + j) {
-			var index = pArray.indexOf(p);
+			var index = numbers.indexOf(p);
 			if (index >= 0) {
 				times++
-				pArray.splice(index, 1);
+				numbers.splice(index, 1);
 			}
 		}
-		return [pArray, times];
+		return [numbers, times];
 	};
 };
 
-sieveOfEratosthenes(20000);
-
-	
+sieveOfEratosthenes(90000);
