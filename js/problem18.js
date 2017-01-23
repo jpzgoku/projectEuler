@@ -19,14 +19,74 @@ var small = [[3],
           [2, 4, 6],
         [8, 5, 9, 3]];
 
-function test(arr) {
-  var sum = 0;
-  var rows = arr.length;
-  for (var i = 0; i < rows; i++) {
-    sum = sum + arr[i][0];
+function maximumPathSum(arr) {
+  var sum = arr[0][0];
+  console.log(sum);
+  var startingCol = 0;
+  for (var row = 0; row < arr.length - 1; row++) {
+    var a = leftMiddleSum(arr, row, startingCol);
+    var b = rightMiddleSum(arr, row, startingCol);
+    var c = leftColumnSum(arr, row, startingCol);
+    var d = rightColumnSum(arr, row, startingCol)
+    if (b >= a && b >= c && b >= d ||
+        d >= a && d >= b && d >= c) {
+      startingCol++;
+    }
+    console.log(arr[row + 1][startingCol]);
+    sum = sum + arr[row + 1][startingCol];
   }
-  console.log(sum)
+  console.log(sum);
+  return sum;
 };
 
-test(triangle);
-test(small);
+function leftColumnSum(arr, row, startingCol) {
+  var sum = 0;
+  for (var i = row; i < arr.length; i++) {
+    sum = sum + arr[i][startingCol];
+    if (row + 1 < i) {
+      return sum;
+    }
+  }
+  return sum;
+};
+
+function rightColumnSum(arr, row, startingCol) {
+  var col = startingCol;
+  var sum = 0;
+  for (var i = row; i < arr.length; i++) {
+    sum = sum + arr[i][col];
+    col++;
+    if (row + 1 < i) {
+      return sum;
+    }
+  }
+  return sum;
+};
+
+function leftMiddleSum(arr, row, startingCol) {
+  var sum = arr[row][startingCol];
+  if (checkLength(arr, row + 1)) {
+    sum = sum + arr[row + 1][startingCol];
+  }
+  if (checkLength(arr, row + 2)) {
+    sum = sum + arr[row + 2][startingCol + 1];
+  }
+  return sum;
+};
+
+function rightMiddleSum(arr, row, startingCol) {
+  var sum = arr[row][startingCol];
+  if (checkLength(arr, row + 1)) {
+    sum = sum + arr[row + 1][startingCol + 1];
+  }
+  if (checkLength(arr, row + 2)) {
+    sum = sum + arr[row + 2][startingCol + 1];
+  }
+  return sum;
+};
+
+function checkLength(arr, row) {
+  return (arr.length - 1 <= row) ? false : true
+};
+
+maximumPathSum(triangle);
