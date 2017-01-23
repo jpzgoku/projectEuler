@@ -1,28 +1,26 @@
-// Too brute force. Need a way to cut down the processing time.
-
-function numOfMultiples(num) {
+function multiples(num) {
 	var saveTime = Math.ceil(num /2) + 1;
-	var multiples = 0;
-	for (i = 1; i <= saveTime; i++) {
+	var arr = [];
+	var max = num;
+	for (i = 1; i < max; i++) {
 		if (num % i === 0) {
-			multiples++;
+			var max = num / i;
+			arr.push(i);
+			arr.push(max);
 		}
 	}
-	multiples++;
-	return multiples;
+	return arr;
 };
 
 function highlyDivisibleTriangularNumber(numOfDivisors) {
 	var previousNum = 0;
 	for (var i = 1; i < Infinity; i++) {
 		previousNum = previousNum + i;
-		if (numOfMultiples(previousNum) > numOfDivisors) {
+		if (multiples(previousNum).length > numOfDivisors) {
 			console.log(previousNum);
 			return previousNum;
 		}
 	}
 };
 
-highlyDivisibleTriangularNumber(310);
-
-
+highlyDivisibleTriangularNumber(500);

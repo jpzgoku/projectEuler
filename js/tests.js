@@ -1,13 +1,3 @@
-//Failure. This version is even slower
-
-function arraySum(array) {
-	var sum = 0;
-	for (var i = 0; i < array.length; i++) {
-		sum = sum + array[i];
-	}
-	return sum;
-};
-
 var sieveOfEratosthenes = function(n) {
 	var numbers = function() {
 		arr = [];
@@ -40,4 +30,30 @@ var sieveOfEratosthenes = function(n) {
 	}
 };
 
-console.log(arraySum(sieveOfEratosthenes(2000000)));
+function removeEvens(n) {
+	 return (function() {
+		arr = [];
+		arr.push(2)
+		for (var i = 3; i <= n; i += 2) {
+			arr.push(i);
+		}
+		return arr;
+	})();
+};
+
+var xs = [1, "5", 77, "34", 6, 7]
+
+function test(arr) {
+	newArr = [];
+	for (var i = 0; i <= arr.length; i++) {
+		if (Number.isInteger(arr[i])) {
+			newArr.push(arr[i]);
+		}
+	}
+	console.log(newArr);
+	return newArr;
+};
+
+test(xs);
+//console.log(removeEvens(2000000));
+//sieveOfEratosthenes(2000000);
