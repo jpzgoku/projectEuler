@@ -17,15 +17,14 @@ function exponentiation(n, p) {
 };
 
 function arrayMultiplication(arr) {
-  var newArr = function() {
+  var product = function() {
     var empty = [];
     for (var i = 0; i <= arr.length; i++) {
       empty.push(0);
     }
     return empty;
-  };
+  }();
 
-  var product = newArr();
   for (var i = arr.length - 1; i >= 0; i--) {
     product[i + 1] = arr[i] * 2
   }
