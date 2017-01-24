@@ -76,7 +76,7 @@ function multiplyByX(arrIn, arrOut, x) {
   return arrOut;
 };
 
-//Takes an array and does addittion and subtraction so that each value is only one digit long.
+//Takes an array, does addittion and carries the 1 so that each value is only one digit long.
 function singleDigitValues(arr) {
   for (var j = arr.length - 1; j >= 0; j--) {
     var y = intToArray(arr[j]);
@@ -110,12 +110,9 @@ function arraySum(array) {
 };
 
 // Finds the factorial of a number.
-/*function easy(n) {
-  if (n === 1) {
-    return 1;
-  }
-  return n * easy(n-1);
-}
+function factorial(n) {
+  return (n === 1) ? 1 : n * factorial(n-1);
+};
 
-console.log(easy(100));*/
+console.log(factorial(100));
 console.log(arraySum(factorialDigitSum(100)));

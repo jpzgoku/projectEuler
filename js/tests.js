@@ -54,6 +54,26 @@ function test(arr) {
 	return newArr;
 };
 
+// Tests all numbers up to 'max' to see if they are perfect,
+// deficient, of abundant numbers;
+function perfectDeficientAbundantNumbers(max) {
+  var perfect = [];
+  var deficient = [];
+  var abundant = [];
+  for (var i = 1; i <= max; i++) {
+    if (arraySum(divisors(i)) === i) {
+      perfect.push(i);
+    } else if (arraySum(divisors(i)) < i) {
+      deficient.push(i);
+    } else {
+      abundant.push(i);
+    }
+  }
+  console.log('Perfect: ' + perfect);
+  console.log('Deficient: ' + deficient);
+  console.log('Abundant: ' + abundant);
+};
+
 test(xs);
 //console.log(removeEvens(2000000));
 //sieveOfEratosthenes(2000000);
