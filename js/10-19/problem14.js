@@ -13,8 +13,7 @@ var collatz = function(n) {
     }
   };
 
-  findMultiples(n);
-  return arr;
+  return findMultiples(n);
 };
 
 function longestSequence(max) {
@@ -25,8 +24,7 @@ function longestSequence(max) {
       answer = x;
     }
   }
-  console.log([answer[0], answer])
   return [answer[0], answer];
 };
 
-longestSequence(1000000);
+console.log(longestSequence(1000000));
