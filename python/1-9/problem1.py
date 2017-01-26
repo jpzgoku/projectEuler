@@ -1,9 +1,6 @@
+# Returns an array of all multiples of 3 and 5 up to but not including x.
 def multiples_of_three_and_five(n):
-	multiples = []
-	for i in range(n):
-		if i % 3 == 0 or i % 5 == 0:
-			multiples.append(i)
-	return sum(multiples)
+	return [x for x in range(n) if x % 3 == 0 or x % 5 == 0]
 
 
-print(multiples_of_three_and_five(1000))
+print(sum(multiples_of_three_and_five(1000)))

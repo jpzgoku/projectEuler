@@ -1,10 +1,8 @@
-import math
-
 def pythagorean_triplet(num):
 
 
 	def check1(a, b, c):
-		if math.pow(a, 2) + math.pow(b, 2) == math.pow(c, 2):
+		if a ** 2 + b ** 2 == c ** 2:
 			return True
 		return False
 
@@ -23,11 +21,8 @@ def pythagorean_triplet(num):
 					return a, b, c
 
 
-def pythagorean_triplet_product(nums):
-	a = nums[0]
-	b = nums[1]
-	c = nums[2]
-	return a * b * c
+def pythagorean_triplet_product(arr):
+	return arr[0] * arr[1] * arr[2]
 
 
 print(pythagorean_triplet_product(pythagorean_triplet(1000)))

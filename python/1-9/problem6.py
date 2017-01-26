@@ -1,19 +1,14 @@
-import math
-
-def sum_of_squares(end):
-	answer = 0
-	for n in range(1, end + 1):
-		answer = answer + math.pow(n, 2)
-	return answer
+# Returns the sum of numbers 1 squared to 'n' squared.
+def sum_of_squares(n):
+	return sum([x ** 2 for x in range(1, end + 1)])
 
 
-def square_of_the_sum(end):
-	answer = 0
-	for n in range(1, end + 1):
-		answer = answer + n
-	return math.pow(answer, 2)
+# Returns the sum for all numbers from 1 to 'n' then squares that number.
+def square_of_the_sum(n):
+	return sum([x for x in range(1, n + 1)]) ** 2
 
 
+# Returns the difference between two numbers.
 def difference(callback1, callback2):
 	if callback1 > callback2:
 		return callback1 - callback2
