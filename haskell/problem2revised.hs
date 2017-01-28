@@ -1,23 +1,22 @@
--- Returns the finonacci using recursion
-fibonacci :: Int -> Int
-fibonacci 1 = 1
-fibonacci 2 = 1
-fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
+{- Adds that last two values of a list together -}
+add_last2 :: Num a => [a] -> a
+add_last2 arr = last arr + last (init arr)
 
--- Sets Maximum numbers to functions that create infinte lists.
-set_max :: Ord a => [a] -> a -> [a]
-set_max func n = takeWhile (< n) func
+{- Takes an array and adds the last to values of the
+array together then appends that value to the end of the
+array. -}
+list_app :: Num a => [a] -> [a]
+list_app li = li ++ [add_last2 li]
 
--- Infinite list comprehension meant to be used with the setMax function
-test :: (Num t1, Enum t1) => (t1 -> t) -> [t]
-test func = [func x | x <- [1..]]
+{- Returns a list fibonacci numbers up to 'max'.
+Must start with the x value = [1,1] -}
+fibonacci_max :: (Ord a, Num a) => [a] -> a -> [a]
+fibonacci_max x max = if last x < max
+                      then fibonacci_max (list_app x) max
+                      else init x
 
--- Removes odd numbers from a list
+{- Removes odd numbers from a list. -}
 only_evens :: Integral t => [t] -> [t]
 only_evens arr = [x | x <- arr, even x]
 
-answer = sum (only_evens (setMax (test fibonacci) 4000000))
-
--- Still too slow. Need to figure out how to make
--- recursion faster or make a new fibonacci function
--- without using recursion.
+answer = sum(only_evens(fibonacci_max [1,1] 4000000))
