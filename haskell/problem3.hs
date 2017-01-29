@@ -1,7 +1,7 @@
 {- Returns the lowest multiple of 'x' starting at 'y'.-}
 lowest_multiple :: Integral t => t -> t -> t
 lowest_multiple x y = if x `mod` y == 0
-                      then y {- x `quot` y -}
+                      then y
                       else lowest_multiple x (succ y)
 
 {- Returns a Bool on weather 'x' is a prime number-}

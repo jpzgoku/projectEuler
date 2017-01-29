@@ -1,5 +1,3 @@
-import math
-
 def is_it_divisible(num, mul):
 	for i in range(1, mul):
 		if num % i != 0:
@@ -13,4 +11,4 @@ def smallestMultiple(mul):
 			return i
 
 
-print(smallestMultiple(20))
+print(smallestMultiple(10))

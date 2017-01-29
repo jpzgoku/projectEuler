@@ -1,17 +1,13 @@
-{-Need to fix this function so that it stops doing calculations
-when it reaches a False value. -}
-getTFList :: Integral a => a -> a -> [Bool]
-getTFList x max = [x `mod` y == 0 | y <- [1..max]]
+{-Returns a bool debending on weather 'x' is evenly divisible by every
+number uo to 't'.-}
+div_by :: Integral t => t -> t -> Bool
+div_by x t 
+   | t <= 3 = True
+   | x `mod` t == 0 = div_by x (pred t)
+   | otherwise = False
 
-stop :: [Bool] -> [Bool]
-stop x = takeWhile ( /= False) x
+{- Returns the smallest number that is evenly divisible by 1 through 'n'.-}
+smallest_multiple :: Int -> Int
+smallest_multiple n = head ([x | x <- [10, 20..], div_by x n])
 
-hasFalse :: Integral a => a -> a -> Bool
-hasFalse x max = False `elem` (getTFList x max)
-
-getCorrectBool :: Bool -> Bool
-getCorrectBool x = x /= True
-
-smMul x max = getCorrectBool (hasFalse x max)
-
-test2 xs max =[x | x <- [10..xs], smMul x max]
+answer = smallest_multiple 20
