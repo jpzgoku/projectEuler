@@ -44,6 +44,8 @@ only_primes li = if li == divide_non_primes li
 
 {- Returns the prime factors of 'x'.-}
 prime_factor :: Int -> [Int]
-prime_factor x = only_primes (divide_non_primes (multiples x))
+prime_factor x = if is_it_prime x
+                 then [x]
+                 else only_primes (divide_non_primes (multiples x))
 
 answer = maximum (prime_factor 600851475143)

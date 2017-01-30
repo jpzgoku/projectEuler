@@ -11,3 +11,5 @@ smallest_multiple :: Int -> Int
 smallest_multiple n = head ([x | x <- [10, 20..], div_by x n])
 
 answer = smallest_multiple 20
+
+--Too slow
