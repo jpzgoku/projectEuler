@@ -2,4 +2,3 @@ thousand_digit_number = 73167176531330624919225119674426574742355349194934969835
 
 str = show thousand_digit_number
 
---answer = read (str !! 0) + read (str !! 1) + read (str !! 2) + read (str !! 3) :: Integer
