@@ -1,5 +1,5 @@
 from decimal import *
-getcontext().prec = 200
+getcontext().prec = 1970
 
 
 def reciprocal_cycles(max):
@@ -22,15 +22,18 @@ def remove_decimal(n):
     return s
 
 
-# This needs work. Not corret yet
+# Not perfect.
+#The problem is that if the cycle starts with recurring numbers
+#then that is the cycle that it looks for.
 # Returns the recurring cycle of numbers in a string of numbers
 def recurring_cycle(n):
     for i in range(len(n)):
         x = n[i]
-        for j in range(i + 1, len(n)):
+        # Temporary fix is the 'range(i + 2'.
+        for j in range(i + 2, len(n)):
             if x == n[j]:
+                #print(n[j])
                 y = n[i:j]
-                #print(y)
                 l = len(y)
                 if y == n[i+l:j+l]:
                     return y
@@ -39,4 +42,4 @@ def recurring_cycle(n):
 
 
 print(reciprocal_cycles(1000))
-#print(recurring_cycle(remove_decimal(Decimal(1) / Decimal(6))))
+#print(recurring_cycle(remove_decimal(Decimal(1) / Decimal(983))))
