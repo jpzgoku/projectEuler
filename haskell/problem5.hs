@@ -1,4 +1,4 @@
-{-Returns a bool debending on weather 'x' is evenly divisible by every
+{-Returns a bool depending on weather 'x' is evenly divisible by every
 number uo to 't'.-}
 div_by :: Integral t => t -> t -> Bool
 div_by x t 
