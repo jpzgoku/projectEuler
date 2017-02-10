@@ -1,5 +1,6 @@
-import time, math, copy
+import time
 start_time = time.time()
+
 
 # Turn a number into a list of digits.
 def int_to_list(num):
@@ -31,24 +32,6 @@ def list_to_int(arr):
 
 
 def cirrcular_primes(max):
-    answer = []
-    p = primes(max)
-    for i in p:
-        a = int_to_list(i)
-        arr = []
-        for j in range(len(a)):
-            a = rotate_list(a)
-            if list_to_int(a) not in p:
-                continue
-            else:
-                arr.append(i)
-            if len(arr) == len(a):
-                answer.append(i)
-    return answer
-
-
-
-def cirrcular_primes2(max):
     answer = [2, 3, 5, 7]
     p = primes(max)
     for i in p:
@@ -67,5 +50,5 @@ def cirrcular_primes2(max):
 
 
 
-print(len(cirrcular_primes2(1000000)))
-print(time.time() - start_time)
+print(len(cirrcular_primes(1000000)))
+#print(time.time() - start_time)
