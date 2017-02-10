@@ -1,21 +1,19 @@
 import math
 
-def isItPrime(n):
-	half = int(math.ceil(n // 2) + 1)
-	for i in range(2, half):
-		if n % i == 0:
-			return False
-	return True
+# sieve of eratosthenes
+def primes(n):
+    ps, sieve = [], [True] * (n + 1)
+    for p in range(2, n + 1):
+        if sieve[p]:
+           ps.append(p)
+           for i in range(p * p, n + 1, p):
+               sieve[i] = False
+    return ps
 
 
-def nth(num, callback):
-	arr = []
-	for i in range(2, 1000000):
-		if callback(i):
-			arr.append(i);
-			if len(arr) == num:
-				arr.reverse()
-				return arr[0]
+def nth_prime(n):
+    p = primes(n * 100)
+    return p[n - 1]
 
 
-print(nth(10001, isItPrime))
+print(nth_prime(10001))

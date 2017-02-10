@@ -16,10 +16,10 @@ def int_to_list(num):
 # Returns a list of the factorials of the digits in 'n'.
 def factorial_list(n):
     return [factorial(x) for x in int_to_list(n)]
-    
+
 
 # Returns a list of numbers that equal the sum of the factorials of their
-# digits up to 'max',
+# digits up to 'max'.
 def digit_factorials(max):
     return [x for x in range(3, max) if x == sum(factorial_list(x))]
 

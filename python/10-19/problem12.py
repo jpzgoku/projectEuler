@@ -20,3 +20,4 @@ def highly_divisible_triangular_number(n):
 
 
 print(highly_divisible_triangular_number(500))
+#print(multiples(2347492))

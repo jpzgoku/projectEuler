@@ -1,6 +1,6 @@
 import math
 
-def isItPrime(n):
+def is_it_prime(n):
 	half = math.ceil(n / 2) + 1
 	for i in range(2, half):
 		if n % i == 0:
@@ -12,7 +12,7 @@ def prime_factors(num):
 	pfs = []
 
 	def find_prime_factors(num):
-		if isItPrime(num):
+		if is_it_prime(num):
 			return pfs.append(num)
 		for i in range(2, num):
 			if num % i == 0:
