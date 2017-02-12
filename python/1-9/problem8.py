@@ -17,4 +17,4 @@ def find_product(num, start, digits):
 	return product
 
 
-print(largest_series(thousandDigitNumber, 13))
+print(largest_series(thousand_digit_number, 13))

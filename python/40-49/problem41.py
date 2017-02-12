@@ -10,13 +10,11 @@ def primes(n):
 
 
 # Turn a number into a list of digits.
-def int_to_list(num):
-    return [int(x) for x in str(num)]
+int_to_list = lambda n: [int(x) for x in str(n)]
 
 
 # Removes all the values that have '0's from 'arr'.
-def zero_filter(arr):
-    return [x for x in arr if no_zeros(int_to_list(x))]
+zero_filter = lambda arr: [x for x in arr if no_zeros(int_to_list(x))]
 
 
 # Returns a bool on weather a number has zeros in it or not.
@@ -38,13 +36,7 @@ def pandigital_check(v):
 
 
 # Returns all the pandigital primes up to 'max'.
-def pandigital_primes(max):
-    answer = []
-    a = zero_filter(primes(max))
-    for i in a:
-        if pandigital_check(i):
-             answer.append(i)
-    return answer
+pandigital_primes = lambda max: [x for x in zero_filter(primes(max)) if pandigital_check(x)]
 
 
 print(max(pandigital_primes(10000000)))

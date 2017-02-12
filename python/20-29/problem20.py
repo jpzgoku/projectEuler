@@ -8,11 +8,7 @@ def factorial(n):
 
 # Returns the sum of the digits of a number.
 def sum_of_digits(n):
-    answer = 0
-    x = str(n)
-    for i in range(len(x)):
-        answer = answer + int(x[i])
-    return answer
+    return sum([int(x) for x in str(n)])
 
 
 print(sum_of_digits(factorial(100)))

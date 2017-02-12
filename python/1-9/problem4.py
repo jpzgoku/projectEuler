@@ -1,10 +1,6 @@
-# Returns the inversed digits of a number
-def inverse_int(n):
-	return int(str(n)[::-1])
-
-
 # Returns a boolean on weather a number is a palindrome.
 def palindrome(n):
+	inverse_int = lambda n: int(str(n)[::-1])
 	if n == inverse_int(n):
 		return True
 	return False

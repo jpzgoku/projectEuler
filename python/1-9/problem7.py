@@ -1,5 +1,3 @@
-import math
-
 # sieve of eratosthenes
 def primes(n):
     ps, sieve = [], [True] * (n + 1)

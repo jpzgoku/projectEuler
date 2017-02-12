@@ -14,6 +14,7 @@ def collatz(n):
             sequence.append(n)
             return test(n)
 
+
     return test(n)
 
 

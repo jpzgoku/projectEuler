@@ -49,3 +49,6 @@ def pandigital_products(max):
 
 
 print(sum(pandigital_products(5000)))
+
+
+# This is a mess. Redo it!

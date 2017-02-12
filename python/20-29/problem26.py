@@ -16,10 +16,7 @@ def reciprocal_cycles(max):
 
 
 # Takes a number between 1 and 0 and removes the 0 and the decimal point
-def remove_decimal(n):
-    s = str(n)[2:]
-    print(s)
-    return s
+remove_decimal = lambda n: str(n)[2:]
 
 
 # Not perfect.

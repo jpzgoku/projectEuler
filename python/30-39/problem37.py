@@ -1,6 +1,7 @@
 import time
 start_time = time.time()
 
+
 # sieve of eratosthenes
 def primes(n):
     ps, sieve = [], [True] * (n + 1)
@@ -14,16 +15,8 @@ def primes(n):
 
 def truncate(n, p):
 
-
-    def truncate_right_to_left(n, spot):
-        s = str(n)
-        return int(s[:len(s)-spot:])
-
-
-    def truncate_left_to_right(n, spot):
-        s = str(n)
-        return int(s[spot:])
-
+    truncate_right_to_left = lambda n, spot: int(str(n)[:len(str(n))-spot:])
+    truncate_left_to_right = lambda n, spot: int(str(n)[spot:])
 
     arr = []
     length = len(str(n))
