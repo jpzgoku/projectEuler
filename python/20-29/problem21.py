@@ -14,8 +14,7 @@ def divisors(n):
 # Returns a set of all the amicable numbers up to 'max'
 def amicable_numbers(max):
     answer = set()
-    def d(n):
-        return sum(divisors(n))
+    d = lambda n: sum(divisors(n))
 
     for a in range(2, max):
         b = d(a)

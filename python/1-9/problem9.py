@@ -1,17 +1,10 @@
+from functools import reduce
+
+# Returns the first pythagorean triplet that it finds for 'num'.
 def pythagorean_triplet(num):
 
-
-	def check1(a, b, c):
-		if a ** 2 + b ** 2 == c ** 2:
-			return True
-		return False
-
-
-	def check2(a, b, c, num):
-		if a + b + c == num:
-			return True
-		return False
-
+	check1 = lambda a, b, c: True if a ** 2 + b ** 2 == c ** 2 else False
+	check2 = lambda a, b, c, num: True if a + b + c == num else False
 
 	products = []
 	for c in range(1, num):
@@ -21,8 +14,8 @@ def pythagorean_triplet(num):
 					return a, b, c
 
 
-def pythagorean_triplet_product(arr):
-	return arr[0] * arr[1] * arr[2]
+# Returns the product of a list.
+list_product = lambda arr: reduce(lambda x, y: x * y, arr)
 
 
-print(pythagorean_triplet_product(pythagorean_triplet(1000)))
+print(list_product(pythagorean_triplet(1000)))

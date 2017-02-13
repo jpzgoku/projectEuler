@@ -5,10 +5,7 @@ def is_pandigital_product(multiplicand, multiplier):
     if check_for_zeros(product):
         return False
     x = int_to_list(int(str(multiplicand) + str(multiplier) + str(product)))
-    if len(x) != 9 or len(set(x)) != 9:
-        return False
-    else:
-        return product
+    return False if len(x) != 9 or len(set(x)) != 9 else product
 
 
 # Turn a number into a list of digits.

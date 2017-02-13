@@ -14,7 +14,7 @@ def multiples(n):
 def highly_divisible_triangular_number(n):
     previous_num = 0
     for i in range(1, 1000000000):
-        previous_num = previous_num + i
+        previous_num += i
         if len(multiples(previous_num)) > n:
             return previous_num
 
