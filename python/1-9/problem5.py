@@ -1,7 +1,7 @@
 # Too brute force. Needs work.
 
 def is_it_divisible(num, mul):
-	for i in range(1, mul):
+	for i in range(2, mul + 1):
 		if num % i != 0:
 			return False
 	return True

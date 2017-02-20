@@ -53,8 +53,8 @@ function possibleSums(arr, max) {
   return sums;
 };
 
-// Finds all positive integers which cannot be written
-// as the sum of two abundant numbers, up to 'max'.
+/* Finds all positive integers which cannot be written
+ as the sum of two abundant numbers, up to 'max'. */
 function nonAbundantSums(arr, max) {
   var numbers = function() {
     var empty = [];
