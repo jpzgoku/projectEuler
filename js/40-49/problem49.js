@@ -1,3 +1,16 @@
+// Sieve of Eratosthenes
+let primes = (n) => {	
+	let ps = [];
+	let sieve = [true] * (n + 1);
+	for (let p = 2; p <= n; p++) {
+		ps.push(p)
+		for (let i = p * p; i <= n; i = i + p) {
+			sieve[i] = false;
+		}
+	}
+	return ps
+};
+
 /* Changes the origional array and returns a bool on 
 wether there are any more possible permutations. */
 function nextPermutation(array) {
@@ -35,7 +48,17 @@ function doItAlot(n, arr) {
     return arr;
 };
 
-let x = [0,1,2]
-let z = [0,1,2,3,4,5,6,7,8,9]
+/* Any three number sequence with equal distance 
+among two neighbouring terms. */
 
-console.log(doItAlot(1000000, z))
+
+
+
+
+
+
+
+
+
+
+

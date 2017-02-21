@@ -27,4 +27,17 @@ var sieveOfEratosthenes = function(n) {
 	}
 };
 
-console.log(sieveOfEratosthenes(1000000));
+let primes = (n) => {	
+	let ps = [];
+	let sieve = [true] * (n + 1);
+	for (let p = 2; p <= n; p++) {
+		ps.push(p)
+		for (let i = p * p; i <= n; i = i + p) {
+			sieve[i] = false;
+		}
+	}
+	return ps
+};
+
+//console.log(sieveOfEratosthenes(1000000));
+console.log(primes(1000000));

@@ -1,16 +1,12 @@
-# Too brute force. Needs work.
-
-def is_it_divisible(num, mul):
-	for i in range(2, mul + 1):
-		if num % i != 0:
-			return False
-	return True
+from fractions import gcd
+from functools import reduce
 
 
-def smallestMultiple(mul):
-	for i in range(1, 1000000000):
-		if is_it_divisible(i, mul):
-			return i
+# Calculate the lowest common multiple of two integers a and b
+def lcm(a,b):
+    return a*b//gcd(a,b)
 
 
-print(smallestMultiple(20))
+print(reduce(lcm, range(1,20+1)))
+
+# Found it online. Don't understand it.
