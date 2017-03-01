@@ -1,7 +1,6 @@
 let pentagonal = (max) => {
-  let p = (n) => {
-    return (n * ((3 * n) -1)) / 2
-  };
+  
+  let p = (n) => (n * ((3 * n) -1)) / 2
 
   let answer = [];
   for (let i = 1; i <= max; i++) {

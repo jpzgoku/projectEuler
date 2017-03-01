@@ -18,7 +18,7 @@ function numberToWord(n) {
   }();
 
   var words = '';
-  var test2 = function(arr) {
+  var test2 = (arr) => {
     if (arr.length === 1) {
       words = words + singleDigit(arr[0]);
     } else if (arr.length === 2) {

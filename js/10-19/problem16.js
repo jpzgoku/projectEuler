@@ -47,11 +47,11 @@ function arrayMultiplication(arr) {
 };
 
 function arraySum(array) {
-	var sum = 0;
-	for (var i = 0; i < array.length; i++) {
+	let sum = 0;
+	for (i in array) {
 		sum = sum + array[i];
 	}
-	return sum;
+	return sum
 };
 
 console.log(arraySum(exponentiation(2, 1000)));

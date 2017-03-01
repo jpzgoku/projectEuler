@@ -99,13 +99,13 @@ var nums = [37107287533902102798797998220837590246510135740250,
             20849603980134001723930671666823555245252804609722,
             53503534226472524250874054075591789781264330331690 ];
 
-function arrSum(arr) {
-  var sum = 0;
-  for (var i = 0; i < arr.length; i++) {
-    sum = sum + arr[i];
-  }
-  console.log(sum);
-  return sum;
+
+let arraySum = (array) => {
+	let sum = 0;
+	for (i in array) {
+		sum = sum + array[i];
+	}
+	return sum
 };
 
 function firsXDigits(n, numOfDigits) {
@@ -121,5 +121,5 @@ function firsXDigits(n, numOfDigits) {
   return x;
 };
 
-console.log(firsXDigits(arrSum(nums), 10));
+console.log(firsXDigits(arraySum(nums), 10));
 //arrSum(nums);

@@ -3,17 +3,17 @@ function mulOf3And5(endNum) {
 	for (var i = 1; i < endNum; i++) {
 		if (i % 3 === 0 || i % 5 === 0) {
 			nums.push(i)
-		} 
+		}
 	}
 	return nums;
 };
 
 function arraySum(array) {
-	var sum = 0;
-	for (var i = 0; i < array.length; i++) {
+	let sum = 0;
+	for (i in array) {
 		sum = sum + array[i];
 	}
-	return sum;
+	return sum
 };
 
-arraySum(mulOf3And5(1000));
+console.log(arraySum(mulOf3And5(1000)));

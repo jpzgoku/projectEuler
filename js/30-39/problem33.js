@@ -36,9 +36,7 @@ function isDigitCancelling(numerator, denominator) {
   return false;
 };
 
-function checkForSameValue(n, d, fraction) {
-  return (n / d === fraction) ? true : false
-};
+let checkForSameValue = (n, d, fraction) => (n / d === fraction) ? true : false
 
 // Returns all 4 digit cancelling functions.
 function digitCancellingFunctions() {
@@ -59,9 +57,7 @@ function digitCancellingFunctions() {
 // Divides the values in a nested array of 2. Returns an array.
 function arrToDecimal(array) {
   let answer = []
-	array.forEach(function(element) {
-		answer.push(element[0] / element[1]);
-	});
+	array.forEach( (element) => answer.push(element[0] / element[1]) );
   return answer;
 };
 

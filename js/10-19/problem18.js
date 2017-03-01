@@ -21,7 +21,6 @@ var small = [[3],
 
 function maximumPathSum(arr) {
   var sum = arr[0][0];
-  console.log(sum);
   var startingCol = 0;
   for (var row = 0; row < arr.length - 1; row++) {
     var a = leftMiddleSum(arr, row, startingCol);
@@ -32,10 +31,8 @@ function maximumPathSum(arr) {
         d >= a && d >= b && d >= c) {
       startingCol++;
     }
-    console.log(arr[row + 1][startingCol]);
     sum = sum + arr[row + 1][startingCol];
   }
-  console.log(sum);
   return sum;
 };
 
@@ -85,8 +82,6 @@ function rightMiddleSum(arr, row, startingCol) {
   return sum;
 };
 
-function checkLength(arr, row) {
-  return (arr.length - 1 <= row) ? false : true
-};
+let checkLength = (arr, row) => (arr.length - 1 <= row) ? false : true;
 
-maximumPathSum(triangle);
+console.log(maximumPathSum(triangle));

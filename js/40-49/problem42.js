@@ -3,9 +3,7 @@ let words = ["A","ABILITY","ABLE","ABOUT","ABOVE","ABSENCE","ABSOLUTELY","ACADEM
 // Returns an array of triangle numbers.
 let triangleNumbers = (max) => {
 
-	let tri = (n) => {
-		return (.5 * n) * (n + 1)
-	};
+	let tri = (n) => (.5 * n) * (n + 1)
 
 	arr = [];
 	for (let i = 1; i <= max; i++) {
@@ -29,14 +27,10 @@ function stringsToInt(arr) {
 };
 
 // Changes capital letters into integers.
-function letterToInt(l) {
-  return l.charCodeAt(0) - 64
-};
+let letterToInt = (l) => l.charCodeAt(0) - 64;
 
 // Returns the max value of an array.
-function max(arr) {
-	return Math.max(...arr)
-};
+let max = (arr) => Math.max(...arr);
 
 function codedTriangleNumbers(max, list) {
 	let answer = [];
@@ -59,5 +53,3 @@ function inArray(n, arr) {
 };
 
 console.log(codedTriangleNumbers(20, words).length)
-
-

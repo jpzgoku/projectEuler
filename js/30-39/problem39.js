@@ -1,9 +1,7 @@
 // Finds pythagorean triplets that equal 'sum'.
 let findPythogoreanTriplet = (sum) => {
 
-  let isPythagoreanTriplet = (a, b, c) => {
-		return (Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2)) ? true : false
-	};
+  let isPythagoreanTriplet = (a, b, c) => (Math.pow(a, 2) + Math.pow(b, 2) === Math.pow(c, 2)) ? true : false;
 
 	let pythagoreanTriplets = [];
 	for (let c = 3; c < sum ; c++) {

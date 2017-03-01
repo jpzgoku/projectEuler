@@ -29,11 +29,8 @@ var primeFactors = function(num) {
 	return array;
 };
 
-function largestPrimeFactor(array) {
-	var largeToSmall = array.sort(function(a, b){return b-a});
-	console.log(largeToSmall[0]);
-	return largeToSmall[0];
-};
+// Sorts an array from large to small.
+let largestToSmallest = (array) => array.sort( (a, b) => b - a);
 
-largestPrimeFactor(primeFactors(224));
-largestPrimeFactor(primeFactors(600851475143));
+console.log(largestToSmallest(primeFactors(224))[0]);
+console.log(largestToSmallest(primeFactors(600851475143))[0]);

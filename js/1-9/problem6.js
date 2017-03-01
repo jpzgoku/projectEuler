@@ -14,9 +14,8 @@ function squareOfTheSum(max) {
 	return Math.pow(sum, 2);
 };
 
-function findTheDifference(callback1, callback2) {
-	return (callback1 > callback2) ? callback1 - callback2 : callback2 - callback1
-};
+// Finds the difference between a and b
+let difference = (a, b) => (a > b) ? a - b : b - a
 
-console.log(findTheDifference(squareOfTheSum(100), sumOfSquares(100)));
-console.log(findTheDifference(sumOfSquares(100), squareOfTheSum(100)));
+console.log(difference(squareOfTheSum(100), sumOfSquares(100)));
+console.log(difference(sumOfSquares(100), squareOfTheSum(100)));

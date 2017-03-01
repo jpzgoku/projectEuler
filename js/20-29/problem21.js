@@ -20,7 +20,7 @@ function divisors(num) {
 // Takes an array and adds up all the numbers.
 function arraySum(array) {
 	var sum = 0;
-	for (var i = 0; i < array.length; i++) {
+	for (i in array) {
 		sum = sum + array[i];
 	}
 	return sum;
@@ -29,9 +29,7 @@ function arraySum(array) {
 // Finds pairs of amicableNumbers up to 'max'
 function amicableNumbers(max) {
   var arr = [];
-  var d = function(n) {
-    return arraySum(divisors(n))
-  };
+  var d = (n) => arraySum(divisors(n))
   for (var a = 1; a < max; a++) {
     var b = d(a);
     if (d(b) === a && a !== b) {

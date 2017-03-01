@@ -20,9 +20,9 @@ function inputPathDimensions(x, y) {
 };
 
 // Finds the product of an array.
-function arrayProduct(arr) {
+let arrayProduct = (arr) => {
 	let sum = 1;
-	for (let i = 0; i < arr.length; i++) {
+	for (i in arr) {
 		sum = sum * arr[i];
 	}
 	return sum;

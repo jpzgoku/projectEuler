@@ -103,16 +103,14 @@ function cutZeros(arr) {
 // Takes an array and adds up all the numbers.
 function arraySum(array) {
 	var sum = 0;
-	for (var i = 0; i < array.length; i++) {
+	for (i in array) {
 		sum = sum + array[i];
 	}
 	return sum;
 };
 
 // Finds the factorial of a number.
-function factorial(n) {
-  return (n === 1) ? 1 : n * factorial(n-1);
-};
+let factorial = (n) => (n === 1) ? 1 : n * factorial(n-1);
 
 console.log(factorial(100));
 console.log(arraySum(factorialDigitSum(100)));
