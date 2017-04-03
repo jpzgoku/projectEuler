@@ -1,13 +1,13 @@
-var daysOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-var months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'Sept', 'Oct', 'Nov', 'Dec'];
+const daysOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'Sept', 'Oct', 'Nov', 'Dec'];
 
 function countingSundays(startYear, endYear, startDay) {
-  var x = startDay;
-  var answer = [];
-  var numOfDays;
-  for (var year = startYear; year <= endYear; year++ ) {
+  let x = startDay;
+  let answer = [];
+  let numOfDays;
+  for (let year = startYear; year <= endYear; year++ ) {
     //console.log(year);
-    for (var i = 0; i < months.length; i++) {
+    for (let i in months) {
       //console.log(months[i]);
       if (months[i] === 'April' || months[i] === 'June' ||
           months[i] === 'Sept' || months[i] === 'Nov') {
@@ -21,8 +21,8 @@ function countingSundays(startYear, endYear, startDay) {
       } else {
         numOfDays = 31;
       }
-      for (var day = 1; day <= numOfDays; day++) {
-        var date = [daysOfTheWeek[x], months[i], day, year]
+      for (let day = 1; day <= numOfDays; day++) {
+        let date = [daysOfTheWeek[x], months[i], day, year]
         //console.log(date);
         if (date[0] === 'Sunday' && date[2] === 1) {
           answer.push(date);

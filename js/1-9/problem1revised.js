@@ -1,6 +1,6 @@
 function mulOf3And5(endNum) {
-	var nums = [];
-	for (var i = 1; i < endNum; i++) {
+	let nums = [];
+	for (let i = 1; i < endNum; i++) {
 		if (i % 3 === 0 || i % 5 === 0) {
 			nums.push(i)
 		}
@@ -9,11 +9,7 @@ function mulOf3And5(endNum) {
 };
 
 function arraySum(array) {
-	let sum = 0;
-	for (i in array) {
-		sum = sum + array[i];
-	}
-	return sum
+	return array.reduce((prev, current) => prev + current);
 };
 
 console.log(arraySum(mulOf3And5(1000)));

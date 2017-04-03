@@ -1,15 +1,15 @@
 function intToArray(n) {
-  var arr = [];
-  var str = String(n);
-  for (var i = 0; i < str.length; i++) {
+  let arr = [];
+  let str = String(n);
+  for (let i = 0; i < str.length; i++) {
     arr.push(Number(str.charAt(i)));
   }
   return arr;
 };
 
 function exponentiation(n, p) {
-  var x = intToArray(n);
-  for (var i = 1; i < p; i++) {
+  let x = intToArray(n);
+  for (let i = 1; i < p; i++) {
     x = arrayMultiplication(x);
   }
   console.log(x);
@@ -17,26 +17,26 @@ function exponentiation(n, p) {
 };
 
 function arrayMultiplication(arr) {
-  var product = function() {
-    var empty = [];
-    for (var i = 0; i <= arr.length; i++) {
+  let product = function() {
+    let empty = [];
+    for (let i = 0; i <= arr.length; i++) {
       empty.push(0);
     }
     return empty;
   }();
 
-  for (var i = arr.length - 1; i >= 0; i--) {
+  for (let i = arr.length - 1; i >= 0; i--) {
     product[i + 1] = arr[i] * 2
   }
 
-  for (var j = product.length - 1; j >= 0; j--) {
+  for (let j = product.length - 1; j >= 0; j--) {
     if (product[j] >= 10) {
       product[j] = product[j] - 10;
       product[j - 1] = product[j - 1] + 1;
     }
   }
 
-  for (var k = 0; k <= arr.length; k + 0) {
+  for (let k = 0; k <= arr.length; k + 0) {
     if (product[k] === 0) {
       product.shift();
     } else {
@@ -47,11 +47,7 @@ function arrayMultiplication(arr) {
 };
 
 function arraySum(array) {
-	let sum = 0;
-	for (i in array) {
-		sum = sum + array[i];
-	}
-	return sum
+	return array.reduce((prev, current) => prev + current);
 };
 
 console.log(arraySum(exponentiation(2, 1000)));

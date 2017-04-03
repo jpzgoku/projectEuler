@@ -8,8 +8,25 @@ function findSum(max) {
 			answer = answer + fibonacci(i);
 		}
 	}
-	console.log(answer);
 	return answer;
 };
 
-findSum(4000000);
+console.log(findSum(4000000));
+
+function arraySum(array) {
+	return array.reduce((prev, current) => prev + current);
+};
+
+function evenFibonacciNumbers(max) {
+	let nums = [];
+	let f = n => (n === 0 || n === 1) ? 1 : (f(n-1) + f(n-2));
+
+	for (let i = 0; f(i) <= max; i++) {
+		if (f(i) % 2 === 0) {
+			nums.push(f(i));
+		}
+	}
+	return nums
+};
+
+console.log(arraySum(evenFibonacciNumbers(4000000)));
