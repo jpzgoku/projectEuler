@@ -24,35 +24,35 @@ grid = [[ 8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77,
 
 # Returns the product of a list.
 def list_product(arr):
-	return reduce(lambda x, y: x * y, arr)
+    return reduce(lambda x, y: x * y, arr)
 
 
 # Concatenates a list of nested lists into one big list.
 def coconcatenate_nested_lists(arr):
-	return list(reduce(lambda x, y: x + y, arr))
+    return list(reduce(lambda x, y: x + y, arr))
 
 
 # Returns a portion of a list of nested lists and concatenates them into a single list.
 def p(arr, start, end):
-	return coconcatenate_nested_lists([arr[x] for x in range(start, end)])
+    return coconcatenate_nested_lists([arr[x] for x in range(start, end)])
 
 
 def right_diagonal_products(arr):
-	diagonal_right_down = lambda arr, start: list_product([arr[start + (x * 21)] for x in range(4)])
-	return [diagonal_right_down(arr, x) for x in range(17)]
+    diagonal_right_down = lambda arr, start: list_product([arr[start + (x * 21)] for x in range(4)])
+    return [diagonal_right_down(arr, x) for x in range(17)]
 
 
 def left_diagonal_products(arr):
-	diagonal_left_down = lambda arr, start: list_product([arr[start + (x * 19)] for x in range(4)])
-	return [diagonal_left_down(arr, x) for x in range(3, 20)]
+    diagonal_left_down = lambda arr, start: list_product([arr[start + (x * 19)] for x in range(4)])
+    return [diagonal_left_down(arr, x) for x in range(3, 20)]
 
 
 # Finds the largest product in a grid. 'arr' is the list. 'x' is the number of rows.
 #'y' is the number of columns. 'n' is the number of multiples.
 def largest_product_in_a_grid(arr, x, y, n):
-	right = [right_diagonal_products(p(arr, r, r + n)) for r in range((x - n) + 1)]
-	left = [left_diagonal_products(p(arr, l, l + n)) for l in range((y - n) + 1)]
-	return max(max(coconcatenate_nested_lists(right)), max(coconcatenate_nested_lists(left)))
+    right = [right_diagonal_products(p(arr, r, r + n)) for r in range((x - n) + 1)]
+    left = [left_diagonal_products(p(arr, l, l + n)) for l in range((y - n) + 1)]
+    return max(max(coconcatenate_nested_lists(right)), max(coconcatenate_nested_lists(left)))
 
 
 print(largest_product_in_a_grid(grid, 20, 20, 4))

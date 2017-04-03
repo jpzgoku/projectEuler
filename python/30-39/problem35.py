@@ -51,7 +51,7 @@ def cirrcular_primes(max):
 
 
 print(len(cirrcular_primes(1000000)))
-#print(time.time() - start_time)
+# print(time.time() - start_time)
 
 
 # Too slow.

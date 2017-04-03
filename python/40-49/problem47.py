@@ -56,8 +56,8 @@ def distinct_prime_factors(n):
              answer = []
 
 
-#print(test(prime_factors(134043)))
-#print(test(prime_factors(134044)))
-#print(test(prime_factors(134045)))
-#print(test(prime_factors(134046)))
+# print(test(prime_factors(134043)))
+# print(test(prime_factors(134044)))
+# print(test(prime_factors(134045)))
+# print(test(prime_factors(134046)))
 print(distinct_prime_factors(4))

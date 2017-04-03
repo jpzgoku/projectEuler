@@ -15,7 +15,7 @@ def num_of_digits(n):
 def x_digits(d, func):
     for i in range(1, 1000000000):
         if num_of_digits(fibonacci(i)) >= d:
-            return i;
+            return i
 
 
 print(x_digits(1000, fibonacci))

@@ -15,7 +15,6 @@ def longest_collatz_sequence(max):
             answer.append(num)
         return answer
 
-
     output = []
     for i in range(1, max):
         x = collatz(i)

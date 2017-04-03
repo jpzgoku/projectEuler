@@ -1,9 +1,11 @@
 # Turn a number into a list of digits.
-int_to_list = lambda n: [int(x) for x in str(n)]
+def int_to_list(n):
+    return[int(x) for x in str(n)]
 
 
 # Changes a list of numbers into an integer
-list_to_int = lambda arr: int(''.join(map(str,arr)))
+def list_to_int(arr):
+    return int(''.join(map(str, arr)))
 
 
 # Multiplies 'n' by [1..10], concatenates those results and returns
@@ -28,7 +30,8 @@ def pandigital_check(n):
 
 
 # Returns a list of all the pandigital multiples.
-pandigital_multiples = lambda: [x for x in range(1, 10001) if pandigital_check(nine_digits(x))]
+def pandigital_multiples():
+    return [x for x in range(1, 10001) if pandigital_check(nine_digits(x))]
 
 
 print(max(pandigital_multiples()))

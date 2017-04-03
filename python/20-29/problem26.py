@@ -3,11 +3,11 @@ getcontext().prec = 1970
 
 
 def reciprocal_cycles(max):
-    longest = 0;
+    longest = 0
     answer = 0
     for i in range(2, max):
         x = recurring_cycle(remove_decimal(Decimal(1) / Decimal(i)))
-        if x == None:
+        if x is None:
             continue
         if len(x) > longest:
             longest = len(x)
@@ -16,12 +16,13 @@ def reciprocal_cycles(max):
 
 
 # Takes a number between 1 and 0 and removes the 0 and the decimal point
-remove_decimal = lambda n: str(n)[2:]
+def remove_decimal(n):
+    return str(n)[2:]
 
 
 # Not perfect.
-#The problem is that if the cycle starts with recurring numbers
-#then that is the cycle that it looks for.
+# The problem is that if the cycle starts with recurring numbers
+# then that is the cycle that it looks for.
 # Returns the recurring cycle of numbers in a string of numbers
 def recurring_cycle(n):
     for i in range(len(n)):
@@ -29,7 +30,7 @@ def recurring_cycle(n):
         # Temporary fix is the 'range(i + 2'.
         for j in range(i + 2, len(n)):
             if x == n[j]:
-                #print(n[j])
+                # print(n[j])
                 y = n[i:j]
                 l = len(y)
                 if y == n[i+l:j+l]:
@@ -39,4 +40,4 @@ def recurring_cycle(n):
 
 
 print(reciprocal_cycles(1000))
-#print(recurring_cycle(remove_decimal(Decimal(1) / Decimal(983))))
+# print(recurring_cycle(remove_decimal(Decimal(1) / Decimal(983))))

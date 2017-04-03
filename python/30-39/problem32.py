@@ -1,5 +1,10 @@
-# Returns a boolean or their product on weather a multiplicand, a multiplier, and thier product
-# make up a pandigital number when concatenated together.
+'''
+Returns a boolean or their product on weather a multiplicand,
+a multiplier, and thier product make up a pandigital number when
+concatenated together.
+'''
+
+
 def is_pandigital_product(multiplicand, multiplier):
     product = multiplicand * multiplier
     if check_for_zeros(product):
@@ -23,7 +28,7 @@ def check_for_zeros(num):
 
 
 def pandigital_products(max):
-    answer = [];
+    answer = []
     for multiplicand in range(2, max):
         if check_for_zeros(multiplicand):
             continue

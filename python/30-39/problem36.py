@@ -1,9 +1,11 @@
 # Returns a boolean on weather a number is a palindrome.
-palindrome = lambda n: True if n == int(str(n)[::-1]) else False
+def palindrome(n):
+    return True if n == int(str(n)[::-1]) else False
 
 
 # Returns n (in base 10) in base 2
-binary = lambda n: int(bin(n)[2:])
+def binary(n):
+    return int(bin(n)[2:])
 
 
 def double_base_palondromes(max):
