@@ -15,7 +15,8 @@ def pythagorean_triplet(num):
 
 
 # Returns the product of a list.
-list_product = lambda arr: reduce(lambda x, y: x * y, arr)
+def list_product(arr):
+	return reduce(lambda x, y: x * y, arr)
 
 
 print(list_product(pythagorean_triplet(1000)))

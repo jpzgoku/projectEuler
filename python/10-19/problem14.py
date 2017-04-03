@@ -1,34 +1,39 @@
-# Returns a list of a collatz sequence.
-def collatz(n):
-    sequence = [n]
-
-    def test(n):
-        if n == 1 :
-            return sequence
-        elif n % 2 == 0:
-            n = n / 2
-            sequence.append(n)
-            return test(n)
-        else:
-            n = (3 * n) + 1
-            sequence.append(n)
-            return test(n)
+import time
+start_time = time.time()
 
 
-    return test(n)
+def longest_collatz_sequence(max):
+
+    def collatz(n):
+        answer = [n]
+        num = n
+        while not num == 1:
+            if num % 2 == 0:
+                num = num // 2
+            else:
+                num = (3 * num) + 1
+            answer.append(num)
+        return answer
 
 
-# Finds the longest output produced by 'func' up to 'max'.
-def longest_output(max, func):
-    num = 0
     output = []
     for i in range(1, max):
-        x = func(i)
+        x = collatz(i)
         if len(x) > len(output):
             output = x
-            num = i
-    return [num, output]
+    return output[0]
 
 
-#print(collatz(13))
-print(longest_output(1000000, collatz))
+print(longest_collatz_sequence(1000000))
+print(time.time() - start_time)
+
+
+'''
+To make it faster you could somehow have the computer
+remember the lenght of the sequence for every number
+that it has already computed. For example if the computer
+runs into 13 then it knows that the sequence will end
+in 9 more numbers. So then the computer won't have to do
+those nine computations. This will cut down the time when
+the sequences get really long.
+'''
