@@ -1,45 +1,17 @@
-// Returns an array of all the proper divisors of a number.
-function divisors(num) {
-	var saveTime = Math.ceil(num /2) + 1;
-	var arr = [];
-	var max = num;
-	for (i = 1; i < max; i++) {
-		if (num % i === 0) {
-			var max = num / i;
-			arr.push(i);
-			arr.push(max);
+// Finds pairs of amicableNumbers up to 'max'
+let amicableNumbers = max => {
+	let answer = [];
+	let d = n => Number.divisors(n).sum();
+	for (let a = 1; a < max; a++) {
+		let b = d(a);
+		if (d(b) === a && a !== b) {
+			answer.push(a);
+			answer.push(b);
+			a = b;
 		}
 	}
-  arr.splice(1, 1);
-  if (arr[arr.length - 1] === arr[arr.length - 2]) {
-    arr.pop();
-  }
-	return arr;
+	console.log(answer);
+	return answer;
 };
 
-// Takes an array and adds up all the numbers.
-function arraySum(array) {
-	var sum = 0;
-	for (i in array) {
-		sum = sum + array[i];
-	}
-	return sum;
-};
-
-// Finds pairs of amicableNumbers up to 'max'
-function amicableNumbers(max) {
-  var arr = [];
-  var d = (n) => arraySum(divisors(n))
-  for (var a = 1; a < max; a++) {
-    var b = d(a);
-    if (d(b) === a && a !== b) {
-      arr.push(a);
-      arr.push(b);
-      a = b;
-    }
-  }
-  console.log(arr);
-  return arr;
-};
-
-console.log(arraySum(amicableNumbers(10000)));
+console.log(amicableNumbers(10000).sum());

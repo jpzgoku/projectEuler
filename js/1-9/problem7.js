@@ -1,24 +1,24 @@
-function isItPrime(num) {
-	var saveTime = Math.ceil(num /2) + 1;
-	for (var i = 2; i < saveTime; i++) {
-		if (num % i === 0) {
-			return false;
+// sieve of eratoshenes
+let primes = n => {
+	let answer = [];
+	let sieve = function() {
+		let arr = [];
+		for (let i = 0; i < n; i++) {
+			arr.push(true);
 		}
-	}
-	return true;
-};
-
-function nth(num, callback) {
-	var arr = [];
-	for (var i = 2; i < Infinity; i++) {
-		if (callback(i)) {
-			arr.push(i);
-			if (arr.length === num) {
-				arr.reverse()
-				return arr[0];
+		return arr;
+	}();
+	for (let p = 2; p <= n; p++) {
+		if (sieve[p]) {
+			answer.push(p)
+			for (let j = p * p; j <= n + 1; j += p) {
+				sieve[j] = false;
 			}
 		}
 	}
+	return answer;
 };
 
-console.log(nth(10001, isItPrime));
+let place = 10001;
+
+console.log(primes(1000000)[place - 1]);

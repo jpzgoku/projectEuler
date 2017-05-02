@@ -1,9 +1,8 @@
 function numberLetterCounts(n) {
   var sum = 0;
   for (var i = 1; i <= n; i++) {
-    sum = sum + numberToWord(i).length
+    sum += numberToWord(i).length
   }
-  console.log(sum);
   return sum;
 };
 
@@ -20,19 +19,19 @@ function numberToWord(n) {
   var words = '';
   var test2 = (arr) => {
     if (arr.length === 1) {
-      words = words + singleDigit(arr[0]);
+      words += singleDigit(arr[0]);
     } else if (arr.length === 2) {
-      words = words + doubleDigit(arr);
+      words += doubleDigit(arr);
     } else if (arr.length === 3) {
-      words = words + singleDigit(arr[0]) + 'hundred';
+      words += singleDigit(arr[0]) + 'hundred';
       if (arr[1] === 0 && arr[2] === 0) {
         return words
       }
-      words = words + 'and';
+      words += 'and';
       numArray.shift();
-      test2(numArray);
+      return test2(numArray);
     } else if (arr.length === 4) {
-      words = words + singleDigit(arr[0]) + 'thousand';
+      words += singleDigit(arr[0]) + 'thousand';
       return words;
     }
   };
@@ -98,19 +97,13 @@ function teens(n) {
     return 'twelve';
   } else if (n === 3) {
     return 'thirteen';
-  } else if (n === 4) {
-    return 'fourteen';
   } else if (n === 5) {
     return 'fifteen';
-  } else if (n === 6) {
-    return 'sixteen';
-  } else if (n === 7) {
-    return 'seventeen';
   } else if (n === 8) {
     return 'eighteen';
-  } else if (n === 9) {
-    return 'nineteen';
+  } else {
+    return singleDigit(n) + 'teen';
   }
 };
 
-numberLetterCounts(1000);
+console.log(numberLetterCounts(1000));

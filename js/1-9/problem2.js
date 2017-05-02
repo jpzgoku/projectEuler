@@ -1,32 +1,20 @@
-let fibonacci = (n) => (n === 0 || n === 1) ? 1 : (fibonacci(n-1) + fibonacci(n-2));
+// Returns an array of all Fibonacci numbers less than 'n'.
+let fibonacciMax = function() {
+    let fibonacci = [0, 1];
 
-function findSum(max) {
-	var answer = 0;
-	for (var i = 0; fibonacci(i) <= max; i++) {
-		console.log("The fibonacci of " + i + " is " + fibonacci(i));
-		if (fibonacci(i) % 2 === 0) {
-			answer = answer + fibonacci(i);
-		}
-	}
-	return answer;
-};
+    return n => {
+        let answer;
+        for (let i = 1; i < Infinity; i++) {
+            if (!fibonacci[i + 1]) {
+                fibonacci.push(fibonacci[i] + fibonacci[i - 1]);
+            }
 
-console.log(findSum(4000000));
+            if (fibonacci[i + 1] > n) {
+                answer = fibonacci.slice(0, i + 1);
+                return answer;
+            }
+        }
+    };
+}();
 
-function arraySum(array) {
-	return array.reduce((prev, current) => prev + current);
-};
-
-function evenFibonacciNumbers(max) {
-	let nums = [];
-	let f = n => (n === 0 || n === 1) ? 1 : (f(n-1) + f(n-2));
-
-	for (let i = 0; f(i) <= max; i++) {
-		if (f(i) % 2 === 0) {
-			nums.push(f(i));
-		}
-	}
-	return nums
-};
-
-console.log(arraySum(evenFibonacciNumbers(4000000)));
+console.log(fibonacciMax(4000000).evens().sum());

@@ -1,35 +1,16 @@
-// Takes a number and turns it into an array.
-function intToArray(n) {
-  var arr = [];
-  var str = String(n);
-  for (var i = 0; i < str.length; i++) {
-    arr.push(Number(str.charAt(i)));
-  }
-  return arr;
-};
-
-// Takes an array and adds up all the numbers.
-function arraySum(array) {
-	var sum = 0;
-	for (var i = 0; i < array.length; i++) {
-		sum = sum + array[i];
-	}
-	return sum;
-};
-
 /* Takes an integer and a power, changes all the digits to their 'p' power.
 returns the sum. */
-function digitPowers(n, p) {
-  let x = intToArray(n);
-  for (let i = 0; i < x.length; i++) {
-    x[i] = Math.pow(x[i], p)
+let digitPowers = function(n, p) {
+  let arr = Number.intToArray(n);
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = Math.pow(arr[i], p)
   }
-  return arraySum(x);
+  return arr.sum();
 };
 
 /* Returns an array of all the numbers that can be written as the sum
  of 'p' powers of their digits.*/
-function allXDigitPowers(max, p) {
+let allXDigitPowers = function(max, p) {
   let arr = [];
   for (let i = 2; i <= max; i++) {
     if (digitPowers(i, p) === i) {
@@ -39,4 +20,4 @@ function allXDigitPowers(max, p) {
   return arr;
 };
 
-console.log(arraySum(allXDigitPowers(1000000, 5)));
+console.log(allXDigitPowers(1000000, 5).sum());

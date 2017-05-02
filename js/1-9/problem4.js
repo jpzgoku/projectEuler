@@ -1,20 +1,17 @@
-// Reverses a number
-let reverseNum = n => Number(String(n).split('').reverse().join(''));
-
+// Returns an array of all the palindrome numbers between 'start' and 'end'.
 let palindrome = (start, end) => {
-	let array = []
+	let answer = [];
+	let reverseNum = n => Number(String(n).split('').reverse().join(''));
+
 	for (let i = start; i < end; i++) {
 		for (let j = start; j < end; j++) {
 			let product = i * j
 			if (product === reverseNum(product)) {
-				array.push(product);
+				answer.push(product);
 			}
 		}
 	}
-	return array;
+	return answer;
 };
 
-// Finds the largest number in an array.
-let max = array => array.sort( (a, b) => b - a)[0];
-
-console.log(max(palindrome(100, 1000)));
+console.log(palindrome(100, 1000).max());

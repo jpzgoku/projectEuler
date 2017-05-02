@@ -1,4 +1,4 @@
-var nums = [37107287533902102798797998220837590246510135740250,
+let nums = [37107287533902102798797998220837590246510135740250,
             46376937677490009712648124896970078050417018260538,
             74324986199524741059474233309513058123726617309629,
             91942213363574161572522430563301811072406154908250,
@@ -99,23 +99,14 @@ var nums = [37107287533902102798797998220837590246510135740250,
             20849603980134001723930671666823555245252804609722,
             53503534226472524250874054075591789781264330331690 ];
 
-
-function arraySum(array) {
-	return array.reduce((prev, current) => prev + current);
+// Returns the first 'x' digits of a number and gets rid of the decimal point.
+let firsXDigits = function(n, numOfDigits) {
+    let str = String(n);
+    let index = str.indexOf('.');
+    if (index >= 0) {
+        str = str.slice(0,index) + str.slice(index + 1);
+    }
+    return str.slice(0, numOfDigits);
 };
 
-function firsXDigits(n, numOfDigits) {
-  var x = String(n);
-  var index = x.indexOf('.');
-  if (index >= 0) {
-    x = x.slice(0,index) + x.slice(index + 1);
-  }
-  var y = x.length
-  for (var i = y; i > numOfDigits; i--) {
-    x = x.slice(0, -1);
-  }
-  return x;
-};
-
-console.log(firsXDigits(arraySum(nums), 10));
-//arrSum(nums);
+console.log(firsXDigits(nums.sum(), 10));

@@ -1,23 +1,22 @@
-// Too brute force. Need a way to cut down the processing time.
-
-var sumOf = function(max, func) {
-	sum = 0;
-	for (var i = 2; i < max; i ++) {
-		if (func(i)) {
-			sum = sum + i;
+// sieve of eratoshenes
+let primes = n => {
+	let answer = [];
+	let sieve = function() {
+		let arr = [];
+		for (let i = 0; i < n; i++) {
+			arr.push(true);
+		}
+		return arr;
+	}();
+	for (let p = 2; p <= n; p++) {
+		if (sieve[p]) {
+			answer.push(p)
+			for (let j = p * p; j <= n + 1; j += p) {
+				sieve[j] = false;
+			}
 		}
 	}
-	return sum;
+	return answer;
 };
 
-function isItPrime(num) {
-	var saveTime = Math.ceil(num /2) + 1;
-	for (var i = 2; i < saveTime; i++) {
-		if (num % i === 0) {
-			return false;
-		}
-	}
-	return true;
-};
-
-console.log(sumOf(2000000, isItPrime));
+console.log(primes(1999999).sum());

@@ -1,15 +1,15 @@
-function sumOfSquares(max) {
-	var sum = 0;
-	for (var i = 1; i <= max; i++) {
-		sum = sum + Math.pow(i, 2);
+let sumOfSquares = max => {
+	let sum = 0;
+	for (let i = 1; i <= max; i++) {
+		sum += Math.pow(i, 2);
 	}
 	return sum;
 };
 
-function squareOfTheSum(max) {
-	var sum = 0;
-	for (var i = 1; i <= max; i++) {
-		sum = sum + i;
+let squareOfTheSum = max => {
+	let sum = 0;
+	for (let i = 1; i <= max; i++) {
+		sum += i;
 	}
 	return Math.pow(sum, 2);
 };

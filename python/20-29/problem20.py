@@ -3,7 +3,7 @@ from functools import reduce
 
 # Returns the factorial of a number without using recursion
 def factorial(n):
-    return list_product([x for x in range(n - 1, 0, -1)])
+    return list_product([x for x in range(n, 0, -1)])
 
 
 # Returns the product of a list.

@@ -1,14 +1,13 @@
-function smallestMultiple(digit) {
+let smallestMultiple = n => {
 	for (var i = 1; i < Infinity ; i++) {
-		if (isDivisable(i, digit)) {
-			console.log(i);
+		if (isDivisable(i, n)) {
 			return i;
 		}
 	}
 };
 
-function isDivisable(num1, digit) {
-	for (var i = 1; i <= digit; i++) {
+let isDivisable = (num1, n) => {
+	for (var i = 1; i <= n; i++) {
 		if (num1 % i != 0) {
 			return false;
 		}
@@ -16,4 +15,7 @@ function isDivisable(num1, digit) {
 	return true;
 };
 
-smallestMultiple(20);
+console.log(smallestMultiple(20));
+
+
+// Brute Force

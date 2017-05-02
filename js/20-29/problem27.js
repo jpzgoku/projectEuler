@@ -17,10 +17,10 @@ function quadraticPrimes() {
   let answer;
   for (let a = -1000; a < 1000; a++) {
     for (let b = -1000; b <= 1000; b++) {
-      let x = consecutivePrimes(a,b);
+      let x = consecutivePrimes(a, b);
       if (x.length > arr.length) {
         arr = x;
-        answer = [a,b];
+        answer = [a, b];
       }
     }
   }
@@ -41,13 +41,4 @@ function isItPrime(num) {
 	return true;
 };
 
-// Return the product of an array.
-function arrayProduct(arr) {
-  var product = 1;
-  for (var i = 0; i < arr.length; i++) {
-    product = product * arr[i];
-  }
-  return product;
-};
-
-console.log(arrayProduct(quadraticPrimes()));
+console.log(quadraticPrimes().product());

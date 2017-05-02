@@ -1,5 +1,6 @@
 // Finds the possible Lattive paths by imputting the dimensions.
-function inputPathDimensions(x, y) {
+let inputPathDimensions = (x, y) => {
+
 	let surfaceArea = x + y;
 	let d = function() {
 		return (x > y) ? y : x
@@ -13,20 +14,9 @@ function inputPathDimensions(x, y) {
 		mul2.push(i + 1);
 	}
 
-	let num1 = arrayProduct(mul1);
-	let num2 = arrayProduct(mul2);
-
-	return num1 / num2;
+	return mul1.product() / mul2.product();
 };
-
-// Finds the product of an array.
-let arrayProduct = (arr) => {
-	let sum = 1;
-	for (i in arr) {
-		sum = sum * arr[i];
-	}
-	return sum;
-}
 
 console.log(inputPathDimensions(5, 3))
 console.log(inputPathDimensions(20,20));
+

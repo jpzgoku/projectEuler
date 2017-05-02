@@ -1,30 +1,45 @@
-var collatz = function(n) {
-  var arr = [];
-  var findMultiples = function(n) {
-    arr.push(n);
-    if (n === 1) {
-      return arr
-    } else if (n % 2 === 0) {
-      var x = n/2
-      return findMultiples(x);
-    } else {
-      var x = (n * 3) + 1;
-      return findMultiples(x);
-    }
-  };
+let longestCollatz = function() {
+	let answer = 1;
+	let numbers = [];
+	let spl = [];
+	let origional = 0;
 
-  return findMultiples(n);
-};
+	let collatz = (n, count=0) => {
+		if (numbers[n]) {
+			count += numbers[n];
+			numbers[origional] = count;
+			return
+		}
+		count++;
+		if (n === 1) {
+			numbers[origional] = count;
+			return
+		} else if (n % 2 === 0) {
+			return collatz(n / 2, count);
+		} else {
+			return collatz((3 * n) + 1, count);
+		}
+	}
 
-function longestSequence(max) {
-  var answer = [];
-  for (var i = 1; i <= max; i++) {
-    var x = collatz(i);
-    if (x.length > answer.length) {
-      answer = x;
-    }
-  }
-  return [answer[0], answer];
-};
+	return function(n) {
+		answer = 1;
+		for (let i = numbers.length; i <= (n * 3); i++) {
+			numbers.push('');
+		}
+		for (let j = 1; j <= n; j++) {
+			origional = j;
+			collatz(j);
+		}
 
-console.log(longestSequence(1000000));
+		spl = numbers.slice(0, n + 1);
+
+		for (let k = 1; k < spl.length; k++) {
+			if (spl[k] > spl[answer]) {
+				answer = k;
+			}
+		}
+		return answer;
+	}
+}();
+
+console.log(longestCollatz(1000000));
