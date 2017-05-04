@@ -7,7 +7,7 @@ function stringsToInt(arr) {
   // Changes capital letters into integers.
   let letterToInt = l => l.charCodeAt(0) - 64;
 
-  for (var i = 0; i < arr.length; i ++) {
+  for (var i = 0; i < arr.length; i++) {
     var num = 0;
     for (var j = 0; j < arr[i].length; j++) {
       num += letterToInt(arr[i].charAt(j));

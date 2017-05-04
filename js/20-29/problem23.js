@@ -1,36 +1,8 @@
-// Returns an array of all the proper divisors of a number.
-function divisors(num) {
-	var saveTime = Math.ceil(num /2) + 1;
-	var arr = [];
-	var max = num;
-	for (i = 1; i < max; i++) {
-		if (num % i === 0) {
-			var max = num / i;
-			arr.push(i);
-			arr.push(max);
-		}
-	}
-  arr.splice(1, 1);
-  if (arr[arr.length - 1] === arr[arr.length - 2]) {
-    arr.pop();
-  }
-	return arr;
-};
-
-// Takes an array and adds up all the numbers.
-function arraySum(array) {
-	var sum = 0;
-	for (var i = 0; i < array.length; i++) {
-		sum = sum + array[i];
-	}
-	return sum;
-};
-
 // Finds all abundant numbers up to 'max'
 function abundantNumbers(max) {
   var abundant = [];
   for (var i = 1; i <= max; i++) {
-     if (arraySum(divisors(i)) > i) {
+     if (Number.divisors(i).sum() > i) {
       abundant.push(i);
     }
   }
@@ -73,4 +45,4 @@ function nonAbundantSums(arr, max) {
   return numbers;
 };
 
-console.log(arraySum(nonAbundantSums(possibleSums(abundantNumbers(28123), 28123), 28123)));
+console.log(nonAbundantSums(possibleSums(abundantNumbers(28123), 28123), 28123).sum());

@@ -1,4 +1,4 @@
-// Finds the possible Lattive paths by imputting the dimensions.
+// Finds the possible Lattice paths by imputting the dimensions.
 let inputPathDimensions = (x, y) => {
 
 	let surfaceArea = x + y;

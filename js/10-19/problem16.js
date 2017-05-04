@@ -28,12 +28,12 @@ let sumOfDigits = function(n, p) {
     return product;
   };
 
-  let x = Number.intToArray(n);
+  let answer = Number.intToArray(n);
   for (let i = 1; i < p; i++) {
-    x = arrayMultiplication(x);
+    answer = arrayMultiplication(answer);
   }
-  console.log(x);
-  return x;
+  console.log(answer);
+  return answer;
 };
 
 console.log(sumOfDigits(2, 1000).sum());
