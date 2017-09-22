@@ -83,7 +83,7 @@ let numberLetterCounts = function(n) {
       } else if (arr.length === 3) {
         words += singleDigit(arr[0]) + 'hundred';
         if (arr[1] === 0 && arr[2] === 0) {
-          return words
+          return words;
         }
         words += 'and';
         numArray.shift();
