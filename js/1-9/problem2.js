@@ -1,3 +1,5 @@
+const prototypes = require('../prototypes');
+
 // Returns an array of all Fibonacci numbers less than 'n'.
 let fibonacciMax = function() {
     let fibonacci = [0, 1];

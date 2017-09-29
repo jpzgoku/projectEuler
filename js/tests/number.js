@@ -85,4 +85,5 @@ module.exports = function() {
     	arr.splice(1, 1);
     	return arr;
     };
+
 }();
