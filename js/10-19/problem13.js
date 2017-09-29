@@ -1,4 +1,6 @@
-let nums = [37107287533902102798797998220837590246510135740250,
+const prototypes = require('../prototypes');
+
+var nums = [37107287533902102798797998220837590246510135740250,
             46376937677490009712648124896970078050417018260538,
             74324986199524741059474233309513058123726617309629,
             91942213363574161572522430563301811072406154908250,
@@ -100,9 +102,9 @@ let nums = [37107287533902102798797998220837590246510135740250,
             53503534226472524250874054075591789781264330331690 ];
 
 // Returns the first 'x' digits of a number and gets rid of the decimal point.
-let firsXDigits = function(n, numOfDigits) {
-    let str = String(n);
-    let index = str.indexOf('.');
+var firsXDigits = function(n, numOfDigits) {
+    var str = String(n);
+    var index = str.indexOf('.');
     if (index >= 0) {
         str = str.slice(0,index) + str.slice(index + 1);
     }

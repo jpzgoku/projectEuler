@@ -1,7 +1,9 @@
-let primeFactors = function(n) {
-	let answer = [];
+const prototypes = require('../prototypes');
 
-	let isItPrime = n => {
+var primeFactors = function(n) {
+	var answer = [];
+
+	var isItPrime = function(n) {
 		for (let i = 2; i < Math.ceil(n / 2) + 1; i++) {
 			if (n % i === 0) {
 				return false;
@@ -10,7 +12,7 @@ let primeFactors = function(n) {
 		return true;
 	};
 
-	let findPrimeF = n => {
+	var findPrimeF = function(n) {
 		if (isItPrime(n)) {
 			return answer.push(n);
 		}

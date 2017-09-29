@@ -1,5 +1,5 @@
-let pythogoreanTriplet = function(sum) {
-	let pythagoreanTriplets = [];
+var pythogoreanTriplet = function(sum) {
+	var pythagoreanTriplets = [];
 	for (let c = 3; c < sum ; c++) {
 		for (let b = 2; b < c; b++) {
 			for (let a = 1; a < b; a++) {
@@ -13,8 +13,8 @@ let pythogoreanTriplet = function(sum) {
 	return pythagoreanTriplets;
 };
 
-let pythagoreanTripletProducts = function(array) {
-	let answer = []
+var pythagoreanTripletProducts = function(array) {
+	var answer = []
 	array.forEach( element => answer.push(element[0] * element[1] * element[2]) );
 	return answer;
 };

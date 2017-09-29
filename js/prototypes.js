@@ -28,7 +28,7 @@ module.exports = function() {
     });
 
     Array.method('sum', function() {
-    	if (this.length === 0) {
+    	if (!this.length) {
     		return 0;
     	}
     	return this.reduce((prev, current) => prev + current);
@@ -37,16 +37,16 @@ module.exports = function() {
     Array.method('product', function() {
     	let sum = 1;
     	for (var i = 0; i < this.length; i++) {
-    		sum = sum * this[i];
+    		sum *= this[i];
     	}
     	return sum;
     });
 
     Number.intToArray = function(n) {
     	let answer = [];
-    	let str = String(n);
+    	let str = n.toString();
     	for (let i = 0; i < str.length; i++) {
-    		answer.push(Number(str.charAt(i)));
+    		answer.push(parseInt(str.charAt(i)));
     	}
     	return answer;
     };

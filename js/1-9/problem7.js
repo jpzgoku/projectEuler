@@ -1,8 +1,8 @@
 // sieve of eratoshenes
-let primes = n => {
-	let answer = [];
-	let sieve = function() {
-		let arr = [];
+var primes = function(n) {
+	var answer = [];
+	var sieve = function() {
+		var arr = [];
 		for (let i = 0; i < n; i++) {
 			arr.push(true);
 		}
@@ -19,6 +19,6 @@ let primes = n => {
 	return answer;
 };
 
-let place = 10001;
+var place = 10001;
 
 console.log(primes(1000000)[place - 1]);

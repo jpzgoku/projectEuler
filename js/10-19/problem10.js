@@ -1,8 +1,10 @@
+const prototypes = require('../prototypes');
+
 // sieve of eratoshenes
-let primes = n => {
-	let answer = [];
-	let sieve = function() {
-		let arr = [];
+var primes = function(n) {
+	var answer = [];
+	var sieve = function() {
+		var arr = [];
 		for (let i = 0; i < n; i++) {
 			arr.push(true);
 		}

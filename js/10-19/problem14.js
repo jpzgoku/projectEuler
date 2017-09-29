@@ -1,10 +1,12 @@
-let longestCollatz = function() {
-	let answer = 1;
-	let numbers = [];
-	let spl = [];
-	let origional = 0;
+'use strict';
 
-	let collatz = (n, count=0) => {
+var longestCollatz = function() {
+	var answer = 1;
+	var numbers = [];
+	var spl = [];
+	var origional = 0;
+
+	var collatz = function(n, count=0) {
 		if (numbers[n]) {
 			count += numbers[n];
 			numbers[origional] = count;
