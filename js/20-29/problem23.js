@@ -1,3 +1,5 @@
+const prototypes = require('../prototypes');
+
 // Finds all abundant numbers up to 'max'
 function abundantNumbers(max) {
   var abundant = [];

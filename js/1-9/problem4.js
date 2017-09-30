@@ -1,8 +1,8 @@
 const prototypes = require('../prototypes');
 
 // Returns an array of all the palindrome numbers between 'start' and 'end'.
-var palindrome = function(start, end) {
-	var answer = [];
+let palindrome = function(start, end) {
+	let answer = [];
 	var reverseNum = n => parseInt(n.toString().split('').reverse().join(''));
 
 	for (let i = start; i < end; i++) {

@@ -1,6 +1,6 @@
 const prototypes = require('../prototypes');
 
-var sumOfSquares = function(max) {
+let sumOfSquares = function(max) {
 	var sum = 0;
 	for (let i = 1; i <= max; i++) {
 		sum += Math.pow(i, 2);
@@ -8,7 +8,7 @@ var sumOfSquares = function(max) {
 	return sum;
 };
 
-var squareOfTheSum = function(max) {
+let squareOfTheSum = function(max) {
 	var sum = 0;
 	for (let i = 1; i <= max; i++) {
 		sum += i;
@@ -17,7 +17,7 @@ var squareOfTheSum = function(max) {
 };
 
 // Finds the difference between a and b
-var difference = function(a, b) {
+let difference = function(a, b) {
 	return (a > b) ? a - b : b - a;
 };
 

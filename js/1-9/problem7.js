@@ -1,5 +1,5 @@
 // sieve of eratoshenes
-var primes = function(n) {
+let primes = function(n) {
 	var answer = [];
 	var sieve = function() {
 		var arr = [];

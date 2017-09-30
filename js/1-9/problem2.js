@@ -1,11 +1,11 @@
 const prototypes = require('../prototypes');
 
 // Returns an array of all Fibonacci numbers less than 'n'.
-var fibonacciMax = function() {
-    var fibonacci = [0, 1];
+let fibonacciMax = function() {
+    let fibonacci = [0, 1];
 
     return function(n) {
-        var answer;
+        let answer;
         for (let i = 1; i < Infinity; i++) {
             if (!fibonacci[i + 1]) {
                 fibonacci.push(fibonacci[i] + fibonacci[i - 1]);

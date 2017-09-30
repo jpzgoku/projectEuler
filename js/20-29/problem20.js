@@ -1,3 +1,5 @@
+const prototypes = require('../prototypes');
+
 // Adds to arrays of numbers together then returns a new array of single digit values.
 let arrayAddition = function(arr1, arr2) {
   let big;
@@ -36,7 +38,7 @@ let factorialDigitSum = function(n) {
       intArray = arrayMultiplication(intArray, i)
     }
   }
-  console.log(intArray);
+  
   return intArray;
 };
 

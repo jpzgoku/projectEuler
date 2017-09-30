@@ -1,6 +1,6 @@
 const prototypes = require('../prototypes');
 
-var smallestMultiple = function(n) {
+let smallestMultiple = function(n) {
 	for (let i = 1; i < Infinity; i++) {
 		if (isDivisable(i, n)) {
 			return i;
@@ -8,7 +8,7 @@ var smallestMultiple = function(n) {
 	}
 };
 
-var isDivisable = function(num1, n) {
+let isDivisable = function(num1, n) {
 	for (let i = 1; i <= n; i++) {
 		if (num1 % i != 0) {
 			return false;

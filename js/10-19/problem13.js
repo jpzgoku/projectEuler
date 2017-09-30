@@ -103,7 +103,7 @@ var nums = [37107287533902102798797998220837590246510135740250,
 
 // Returns the first 'x' digits of a number and gets rid of the decimal point.
 var firsXDigits = function(n, numOfDigits) {
-    var str = String(n);
+    var str = n.toString();
     var index = str.indexOf('.');
     if (index >= 0) {
         str = str.slice(0,index) + str.slice(index + 1);

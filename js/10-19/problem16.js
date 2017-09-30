@@ -1,7 +1,9 @@
+const prototypes = require('../prototypes');
+
 // Only works for exponents of '2';
 let sumOfDigits = function(n, p) {
 
-  let arrayMultiplication = function(arr) {
+ let arrayMultiplication = function(arr) {
     let product = function() {
       let empty = [];
       for (let i = 0; i <= arr.length; i++) {
@@ -32,7 +34,7 @@ let sumOfDigits = function(n, p) {
   for (let i = 1; i < p; i++) {
     answer = arrayMultiplication(answer);
   }
-  console.log(answer);
+
   return answer;
 };
 

@@ -1,3 +1,5 @@
+const prototypes = require('../prototypes');
+
 // Finds pairs of amicableNumbers up to 'max'
 let amicableNumbers = function(max) {
 	let answer = [];
