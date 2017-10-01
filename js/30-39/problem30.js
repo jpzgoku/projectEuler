@@ -28,4 +28,4 @@ var digitXPowers = function(power) {
     return answer.sum();
 };
 
-util.timeFunc(digitXPowers, 5);
+util.timeFunc(digitXPowers, [5]);

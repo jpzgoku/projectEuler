@@ -1,8 +1,8 @@
 module.exports = {
 
-    timeFunc(callback, arguments) {
+    timeFunc(callback, args) {
         var start = new Date();
-        console.log(callback(arguments));
+        console.log(callback.apply(null, args));
         var end = new Date();
         console.log((end - start) / 1000, 'seconds');
     },
@@ -26,5 +26,9 @@ module.exports = {
     		}
     	}
     	return answer;
+    },
+
+    capitalLetterToInt(char) {
+        return char.charCodeAt(0) - 64;
     }
 };

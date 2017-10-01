@@ -10,7 +10,7 @@ def binary(n):
 
 def double_base_palondromes(max):
     a = [x for x in range(max) if palindrome(x)]
-    return [x for x in a if palindrome(binary(x))]
+    return sum([x for x in a if palindrome(binary(x))])
 
 
-print(sum(double_base_palondromes(1000000)))
+print(double_base_palondromes(1000000))

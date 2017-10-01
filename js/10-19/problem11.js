@@ -79,4 +79,4 @@ var largestProductInGrid = function(grid, numDigits) {
     return answer;
 };
 
-util.timeFunc(largestProductInGrid, grid, 4);
+util.timeFunc(largestProductInGrid, [grid, 4]);

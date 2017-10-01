@@ -30,4 +30,4 @@ var circularPrimes = function(max) {
     ];
 };
 
-util.timeFunc(circularPrimes, 1000000);
+util.timeFunc(circularPrimes, [1000000]);
