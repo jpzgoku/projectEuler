@@ -7,7 +7,7 @@ var factorial = function(n) {
     }
     let product = n;
     for (let i = n - 1; i > 0; i--) {
-        product = product * i;
+        product *= i;
     }
     return product;
 };

@@ -36,4 +36,4 @@ var digitCancellingFractions = function() {
     return product;
 };
 
-util.timeFunc(digitCancellingFractions());
+util.timeFunc(digitCancellingFractions);

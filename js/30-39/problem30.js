@@ -25,7 +25,7 @@ var digitXPowers = function(power) {
             answer.push(int);
         }
     }
-    return answer;
+    return answer.sum();
 };
 
-util.timeFunc(digitXPowers(5).sum());
+util.timeFunc(digitXPowers, 5);

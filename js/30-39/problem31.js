@@ -27,4 +27,4 @@ function coinSums() {
   return arr.length;
 };
 
-util.timeFunc(coinSums());
+util.timeFunc(coinSums);
