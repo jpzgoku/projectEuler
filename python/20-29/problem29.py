@@ -1,5 +1,5 @@
-def distinct_powers(aMax, bMax):
-    return set([a**b for a in range(2, aMax + 1) for b in range(2, bMax + 1)])
+def distinct_powers(xMin, xMax):
+    return set([base**power for base in range(xMin, xMax + 1) for power in range(xMin, xMax + 1)])
 
 
-print(len(distinct_powers(100, 100)))
+print(len(distinct_powers(2, 100)))

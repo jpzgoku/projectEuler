@@ -1,4 +1,4 @@
-// Slow. BRUTE FORCE!!!
+const util = require('../util');
 
 function coinSums() {
   let arr = [];
@@ -11,7 +11,7 @@ function coinSums() {
               for (let two = 0; two <= 100; two++) {
                 for (let one = 0; one <= 200; one++) {
                   if ((twoHundred * 200) + (oneHundred * 100) + (fifty * 50) + (twenty * 20) + (ten * 10) + (five * 5) + (two * 2) + (one * 1) > 200) {
-                    continue;
+                    break;
                   }
                   if ((twoHundred * 200) + (oneHundred * 100) + (fifty * 50) + (twenty * 20) + (ten * 10) + (five * 5) + (two * 2) + (one * 1) === 200) {
                     arr.push([twoHundred + ' x 200', oneHundred + ' x 100', fifty + ' x 50', twenty + ' x 20', ten + ' x 10', five + ' x 5', two + ' x 2', one + ' x 1']);
@@ -24,7 +24,7 @@ function coinSums() {
       }
     }
   }
-  return arr
+  return arr.length;
 };
 
-console.log(coinSums());
+util.timeFunc(coinSums());

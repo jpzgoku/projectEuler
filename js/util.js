@@ -1,9 +1,9 @@
 module.exports = {
 
     timeFunc(callback) {
-        var start = new Date().getTime() / 1000;
+        var start = new Date();
         console.log(callback);
-        var end = new Date().getTime() / 1000;
-        console.log(end - start, 'seconds');
+        var end = new Date();
+        console.log((end - start) / 1000, 'seconds');
     }
 };

@@ -1,25 +1,22 @@
-let distinctPowers = function(aMax, bMax) {
-  let answer = [];
-  for (let a = 2; a <= aMax; a++) {
-    for (let b = 2; b <= aMax; b++) {
-      answer.push(Math.pow(a, b));
+const prototypes = require('../prototypes');
+
+var distinctPowers = function(min, max) {
+    var answer = [];
+
+    for (let base = min; base <= max; base++) {
+        for (let power = min; power <= max; power++) {
+            var x = Math.pow(base, power)
+
+            if (answer.indexOf(x) === -1) {
+                answer.push(x);
+            }
+        }
     }
-  }
-  return answer;
+    return answer.length;
 };
 
-  // Wrong. THis function isn't working for some reason.
-// Removes duplicates from an array.
-let removeDuplicates = function(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === arr[i + 1]) {
-      arr.splice(i, 1);
-      i--;
-    }
-  }
-  return arr;
-};
+console.log(distinctPowers(2, 5));
+console.log(distinctPowers(2, 100));
 
 
-console.log(removeDuplicates(distinctPowers(5,5).sortSmall()));
-console.log(removeDuplicates(distinctPowers(100, 100).sortSmall()));
+// Dosent work. Numbers get too big.

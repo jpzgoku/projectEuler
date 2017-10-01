@@ -35,11 +35,11 @@ module.exports = function() {
     });
 
     Array.method('product', function() {
-    	let sum = 1;
+    	let product = 1;
     	for (var i = 0; i < this.length; i++) {
-    		sum *= this[i];
+    		product *= this[i];
     	}
-    	return sum;
+    	return product;
     });
 
     Number.intToArray = function(n) {

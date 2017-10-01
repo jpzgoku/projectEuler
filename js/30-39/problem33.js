@@ -1,74 +1,39 @@
-// Takes a number and turns it into an array.
-function intToArray(n) {
-  let arr = [];
-  let str = String(n);
-  for (let i = 0; i < str.length; i++) {
-    arr.push(Number(str.charAt(i)));
-  }
-  return arr;
+const prototypes = require('../prototypes');
+const util = require('../util');
+
+var digitCancellingFractions = function() {
+    var arr = [];
+    var product = 1;
+
+    for (let numerator = 10; numerator < 100; numerator++) {
+        for (let denominator = 10; denominator < 100; denominator++) {
+            var fraction = numerator / denominator;
+
+            if (fraction >= 1) {
+                continue;
+            }
+
+            numerator = numerator.toString();
+            denominator = denominator.toString();
+            var digitCancelFraction;
+
+            // Check for matching non-trivial digits.
+            if (numerator[0] === denominator[1] && numerator[0] !== denominator[0]) {
+                digitCancelFraction = parseInt(numerator[1]) / parseInt(denominator[0]);
+            } else if (numerator[1] === denominator[0] && numerator[1] !== denominator[1]) {
+                digitCancelFraction = parseInt(numerator[0]) / parseInt(denominator[1]);
+            } else {
+                continue;
+            }
+
+            if (fraction === digitCancelFraction) {
+                arr.push([parseInt(numerator), parseInt(denominator)]);
+                product *= fraction;
+            }
+        }
+    }
+    console.log(arr)
+    return product;
 };
 
-// Finds digit cancelling fractions.
-function isDigitCancelling(numerator, denominator) {
-  let fraction = numerator / denominator
-  let n = intToArray(numerator)
-  let d = intToArray(denominator)
-  if (n[0] === d[0]) {
-    if (checkForSameValue(n[1], d[1], fraction)) {
-      return true;
-    }
-  }
-  if (n[0] === d[1]) {
-    if (checkForSameValue(n[1], d[0], fraction)) {
-      return true;
-    }
-  }
-  if (n[1] === d[0]) {
-    if (checkForSameValue(n[0], d[1], fraction)) {
-      return true;
-    }
-  }
-  if (n[1] === d[1]) {
-    if (checkForSameValue(n[0], d[0], fraction)) {
-      return true;
-    }
-  }
-  return false;
-};
-
-let checkForSameValue = (n, d, fraction) => (n / d === fraction) ? true : false
-
-// Returns all 4 digit cancelling functions.
-function digitCancellingFunctions() {
-  let arr = [];
-  for (let n = 10; n < 100; n++) {
-    for (let d = n + 1; d < 100; d++) {
-      if (n % 10 === 0 || d % 10 === 0) {
-        continue;
-      }
-      if (isDigitCancelling(n, d)) {
-        arr.push([n, d]);
-      }
-    }
-  }
-  return arr;
-};
-
-// Divides the values in a nested array of 2. Returns an array.
-function arrToDecimal(array) {
-  let answer = []
-	array.forEach( (element) => answer.push(element[0] / element[1]) );
-  return answer;
-};
-
-// Return the product of an array.
-function arrayProduct(arr) {
-  var product = 1;
-  for (var i = 0; i < arr.length; i++) {
-    product = product * arr[i];
-  }
-  return product;
-};
-
-//console.log(digitCancellingFunctions());
-console.log(arrayProduct(arrToDecimal(digitCancellingFunctions())));
+util.timeFunc(digitCancellingFractions());
