@@ -1,5 +1,7 @@
 module.exports = {
 
+    // util.timeFunc(func, [arg1, arg2, arg3]);
+    // No arguments: util.timeFunc(func);
     timeFunc(callback, args) {
         var start = new Date();
         console.log(callback.apply(null, args));
