@@ -31,4 +31,5 @@ def non_abundant_sums(n):
     return sum(v)
 
 
-print(non_abundant_sums(28123))
+if __name__ == '__main__':
+    print(non_abundant_sums(28123))

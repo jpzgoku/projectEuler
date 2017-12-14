@@ -39,5 +39,6 @@ def recurring_cycle(n):
                     continue
 
 
-print(reciprocal_cycles(1000))
-# print(recurring_cycle(remove_decimal(Decimal(1) / Decimal(983))))
+if __name__ == '__main__':
+    print(reciprocal_cycles(1000))
+    # print(recurring_cycle(remove_decimal(Decimal(1) / Decimal(983))))

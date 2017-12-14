@@ -55,4 +55,5 @@ def largest_product_in_a_grid(arr, x, y, n):
     return max(max(coconcatenate_nested_lists(right)), max(coconcatenate_nested_lists(left)))
 
 
-print(largest_product_in_a_grid(grid, 20, 20, 4))
+if __name__ == '__main__':
+	print(largest_product_in_a_grid(grid, 20, 20, 4))

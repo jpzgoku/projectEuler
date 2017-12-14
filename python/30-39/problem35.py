@@ -49,9 +49,9 @@ def cirrcular_primes(max):
     return answer
 
 
-
-print(len(cirrcular_primes(1000000)))
-# print(time.time() - start_time)
+if __name__ == '__main__':
+    print(len(cirrcular_primes(1000000)))
+    # print(time.time() - start_time)
 
 
 # Too slow.

@@ -8,4 +8,5 @@ def square_of_the_sum(n):
     return sum([x for x in range(1, n + 1)]) ** 2
 
 
-print(abs(sum_of_squares(100) - square_of_the_sum(100)))
+if __name__ == '__main__':
+    print(abs(sum_of_squares(100) - square_of_the_sum(100)))

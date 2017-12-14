@@ -44,8 +44,9 @@ def truncatable_primes2(max):
     return [x for x in p if x > 10 if truncate(x, p)]
 
 
-print(sum(truncatable_primes2(750000)))
-print(time.time() - start_time)
+if __name__ == '__main__':
+    print(sum(truncatable_primes2(750000)))
+    print(time.time() - start_time)
 
 
 # Very slow

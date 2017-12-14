@@ -32,4 +32,5 @@ def quadratic_primes(n):
     return answer[0] * answer[1]
 
 
-print(quadratic_primes(1000))
+if __name__ == '__main__':
+    print(quadratic_primes(1000))

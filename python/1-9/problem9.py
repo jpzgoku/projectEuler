@@ -16,4 +16,5 @@ def list_product(arr):
     return reduce(lambda x, y: x * y, arr)
 
 
-print(list_product(pythagorean_triplet(1000)))
+if __name__ == '__main__':
+    print(list_product(pythagorean_triplet(1000)))

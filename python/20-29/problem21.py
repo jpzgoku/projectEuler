@@ -24,4 +24,5 @@ def amicable_numbers(max):
     return answer
 
 
-print(sum(amicable_numbers(10000)))
+if __name__ == '__main__':
+    print(sum(amicable_numbers(10000)))

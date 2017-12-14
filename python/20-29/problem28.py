@@ -18,4 +18,5 @@ def number_spiral_diagonals(n):
     return test(n, start, p)
 
 
-print(sum(number_spiral_diagonals(1001)))
+if __name__ == '__main__':
+    print(sum(number_spiral_diagonals(1001)))

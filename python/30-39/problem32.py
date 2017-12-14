@@ -50,7 +50,8 @@ def pandigital_products(max):
     return set(answer)
 
 
-print(sum(pandigital_products(5000)))
+if __name__ == '__main__':
+    print(sum(pandigital_products(5000)))
 
 
 # This is a mess. Redo it!

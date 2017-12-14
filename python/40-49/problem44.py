@@ -19,7 +19,8 @@ def check2(arr):
             return value[1] - value[0]
 
 
-print(check2(check1(pentagonal_numbers(2500))))
+if __name__ == '__main__':
+    print(check2(check1(pentagonal_numbers(2500))))
 
 
 # Way too slow.

@@ -3,8 +3,9 @@ module.exports = {
     // util.timeFunc(func, [arg1, arg2, arg3]);
     // No arguments: util.timeFunc(func);
     timeFunc(callback, args) {
+        var ø = Object.create(null);
         var start = new Date();
-        console.log(callback.apply(null, args));
+        console.log(callback.apply(ø, args));
         var end = new Date();
         console.log((end - start) / 1000, 'seconds');
     },

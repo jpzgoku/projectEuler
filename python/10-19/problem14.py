@@ -23,8 +23,9 @@ def longest_collatz_sequence(max):
     return output[0]
 
 
-print(longest_collatz_sequence(1000000))
-print(time.time() - start_time)
+if __name__ == '__main__':
+    print(longest_collatz_sequence(1000000))
+    print(time.time() - start_time)
 
 
 '''

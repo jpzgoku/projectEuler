@@ -12,4 +12,5 @@ def digit_x_powers(max, p):
     return [x for x in range(2, max) if num_sqr(str(x), p) == x]
 
 
-print(sum(digit_x_powers(200000, 5)))
+if __name__ == '__main__':
+    print(sum(digit_x_powers(200000, 5)))

@@ -14,4 +14,5 @@ def binary_search(arr, answer, maximum, minimum=0):
     return binary_search(arr, answer, maximum, minimum)
 
 
-print(binary_search(primes, 61, len(primes)))
+if __name__ == '__main__':
+    print(binary_search(primes, 61, len(primes)))

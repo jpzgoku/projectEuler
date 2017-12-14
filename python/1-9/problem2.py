@@ -32,4 +32,5 @@ def fi(n, arr=[1,1], counter=2):
     return fi(n, arr, counter)
 
 
-print(sum_of_evens(4000000, fibonacci))
+if __name__ == '__main__':
+    print(sum_of_evens(4000000, fibonacci))

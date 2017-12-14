@@ -23,4 +23,5 @@ def digit_factorials(max):
     return [x for x in range(3, max) if x == sum(factorial_list(x))]
 
 
-print(sum(digit_factorials(100000)))
+if __name__ == '__main__':
+    print(sum(digit_factorials(100000)))

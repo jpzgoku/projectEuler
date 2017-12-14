@@ -12,4 +12,5 @@ def palindrome_product(start, end):
     return [x * y for x in r for y in r if palindrome(x * y)]
 
 
-print(max(palindrome_product(100, 1000)))
+if __name__ == '__main__':
+    print(max(palindrome_product(100, 1000)))

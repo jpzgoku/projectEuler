@@ -18,4 +18,5 @@ def x_digits(d, func):
             return i
 
 
-print(x_digits(1000, fibonacci))
+if __name__ == '__main__':
+    print(x_digits(1000, fibonacci))

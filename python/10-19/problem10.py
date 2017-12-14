@@ -9,4 +9,5 @@ def primes(n):
     return ps
 
 
-print(sum(primes(2000000)))
+if __name__ == '__main__':
+    print(sum(primes(2000000)))

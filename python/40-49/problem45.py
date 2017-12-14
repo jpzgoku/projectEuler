@@ -16,4 +16,5 @@ def problem45(start):
             return t
 
 
-print(problem45(286))
+if __name__ == '__main__':
+    print(problem45(286))

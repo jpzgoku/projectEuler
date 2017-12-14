@@ -1,6 +1,7 @@
 import time
 start_time = time.time()
 
+
 # sieve of eratosthenes
 def primes(n):
     ps, sieve = [], [True] * (n + 1)
@@ -28,5 +29,6 @@ def consecutive_primes(max):
     return [answer, sum(answer)]
 
 
-print(consecutive_primes(1000000))
-print(time.time() - start_time)
+if __name__ == '__main__':
+    print(consecutive_primes(1000000))
+    print(time.time() - start_time)

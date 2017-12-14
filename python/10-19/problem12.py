@@ -19,5 +19,6 @@ def highly_divisible_triangular_number(n):
             return previous_num
 
 
-print(highly_divisible_triangular_number(500))
-# print(multiples(2347492))
+if __name__ == '__main__':
+    print(highly_divisible_triangular_number(500))
+    # print(multiples(2347492))

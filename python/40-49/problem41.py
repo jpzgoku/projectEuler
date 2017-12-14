@@ -40,4 +40,5 @@ def pandigital_primes(max):
     return [x for x in zero_filter(primes(max)) if pandigital_check(x)]
 
 
-print(max(pandigital_primes(10000000)))
+if __name__ == '__main__':
+    print(max(pandigital_primes(10000000)))

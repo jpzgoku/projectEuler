@@ -16,4 +16,5 @@ def lattice_paths(x, y):
     return list_product(mul1) // list_product(mul2)
 
 
-print(lattice_paths(20, 20))
+if __name__ == '__main__':
+    print(lattice_paths(20, 20))

@@ -34,4 +34,5 @@ def pandigital_multiples():
     return [x for x in range(1, 10001) if pandigital_check(nine_digits(x))]
 
 
-print(max(pandigital_multiples()))
+if __name__ == '__main__':
+    print(max(pandigital_multiples()))

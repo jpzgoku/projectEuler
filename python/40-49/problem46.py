@@ -46,8 +46,9 @@ def feed():
             return n
 
 
-print(feed())
-print(time.time() - start_time)
+if __name__ == '__main__':
+    print(feed())
+    print(time.time() - start_time)
 
 
 # Really slow

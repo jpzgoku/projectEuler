@@ -15,7 +15,8 @@ def is_pandigital(n):
     return True
 
 
-print(zero_nine_pandigital())
+if __name__ == '__main__':
+    print(zero_nine_pandigital())
 
 '''This won't work because it takes too long to find all the 0-9
 pandigital numbers with brute force. I need to figure out the

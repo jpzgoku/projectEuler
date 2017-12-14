@@ -13,4 +13,5 @@ def double_base_palondromes(max):
     return sum([x for x in a if palindrome(binary(x))])
 
 
-print(double_base_palondromes(1000000))
+if __name__ == '__main__':
+    print(double_base_palondromes(1000000))

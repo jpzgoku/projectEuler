@@ -14,4 +14,5 @@ def nth_prime(n):
     return p[n - 1]
 
 
-print(nth_prime(10001))
+if __name__ == '__main__':
+    print(nth_prime(10001))

@@ -7,4 +7,5 @@ def lowest_common_multiple(a, b):
     return (a * b) // gcd(a, b)
 
 
-print(reduce(lowest_common_multiple, range(1, 21)))
+if __name__ == '__main__':
+    print(reduce(lowest_common_multiple, range(1, 21)))

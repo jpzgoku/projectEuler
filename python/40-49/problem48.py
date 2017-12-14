@@ -3,4 +3,6 @@ def self_powers(max):
 
 x = str(sum(self_powers(1000)))
 
-print(x[len(x) - 10:])
+
+if __name__ == '__main__':
+    print(x[len(x) - 10:])

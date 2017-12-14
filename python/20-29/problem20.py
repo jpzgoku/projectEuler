@@ -16,4 +16,5 @@ def sum_of_digits(n):
     return sum([int(x) for x in str(n)])
 
 
-print(sum_of_digits(factorial(100)))
+if __name__ == '__main__':
+    print(sum_of_digits(factorial(100)))
