@@ -1,3 +1,4 @@
+const prototypes = require('../prototypes');
 const util = require('../util');
 
 var grid = [[08, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 08],
@@ -61,22 +62,9 @@ var largestProductInGrid = function(grid, numDigits) {
                 }
 
             }
-
-            if (horProduct > answer) {
-                answer = horProduct;
-            }
-            if (vertProduct > answer) {
-                answer = vertProduct;
-            }
-            if (downRight > answer) {
-                answer = downRight;
-            }
-            if (upRight > answer) {
-                answer = upRight;
-            }
         }
     }
-    return answer;
+    return [horProduct, vertProduct, downRight, upRight].max();
 };
 
 util.timeFunc(largestProductInGrid, [grid, 4]);

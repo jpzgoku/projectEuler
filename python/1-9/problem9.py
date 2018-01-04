@@ -1,20 +1,18 @@
-from functools import reduce
+import math, time
+start_time = time.time()
 
 
-# Returns the first pythagorean triplet that it finds for 'num'.
-def pythagorean_triplet(num):
-    products = []
-    for c in range(1, num):
-        for b in range(1, c):
-            for a in range(1, b):
-                if a ** 2 + b ** 2 == c ** 2 and a + b + c == num:
-                    return a, b, c
-
-
-# Returns the product of a list.
-def list_product(arr):
-    return reduce(lambda x, y: x * y, arr)
+def special_pythagorean_triplet(num):
+    for a in range(1, num):
+        for b in range(a, num):
+            c_sum = a**2 + b**2
+            c = math.sqrt(c_sum)
+            if not c.is_integer():
+                continue
+            if a + b + c == num:
+                return a * b * c
 
 
 if __name__ == '__main__':
-    print(list_product(pythagorean_triplet(1000)))
+    print(special_pythagorean_triplet(1000))
+    print('Time: ' + str(time.time() - start_time) + ' seconds')

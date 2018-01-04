@@ -1,5 +1,5 @@
-# Returns the sum of the digits of a number.
 def sum_of_digits(n):
+    '''Returns the sum of the digits of a number.'''
     return sum([int(x) for x in str(n)])
 
 

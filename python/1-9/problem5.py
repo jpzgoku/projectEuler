@@ -2,8 +2,8 @@ from fractions import gcd
 from functools import reduce
 
 
-# Calculate the lowest common multiple of two integers a and b
 def lowest_common_multiple(a, b):
+    '''Calculate the lowest common multiple of two integers a and b'''
     return (a * b) // gcd(a, b)
 
 
