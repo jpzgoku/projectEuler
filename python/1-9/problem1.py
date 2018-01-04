@@ -8,14 +8,12 @@ def multiples_of(*args):
 
     def inner(n):
 
-        multiples = []
-        r = list(range(n))
+        multiples = set()
 
         for item in args:
-            multiples += filter(lambda x: x % item == 0, r)
-        answer = list(set(multiples))
-        answer.sort()
-        return answer
+            # multiples = multiples.union(filter(lambda x: x % item == 0, range(n)))
+            multiples = multiples.union([x for x in range(n) if x % item == 0])
+        return multiples
 
 
     return inner
@@ -24,3 +22,4 @@ def multiples_of(*args):
 if __name__ == '__main__':
     three_and_five = multiples_of(3, 5)
     print(sum(three_and_five(1000)))
+    print('Time: ' + str(time.time() - start_time) + ' seconds')
