@@ -1,5 +1,4 @@
-import math, time
-start_time = time.time()
+import math
 
 
 def special_pythagorean_triplet(num):
@@ -14,5 +13,7 @@ def special_pythagorean_triplet(num):
 
 
 if __name__ == '__main__':
+    import time
+    start_time = time.time()
     print(special_pythagorean_triplet(1000))
     print('Time: ' + str(time.time() - start_time) + ' seconds')
