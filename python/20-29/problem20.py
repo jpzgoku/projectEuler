@@ -1,20 +1,14 @@
-from functools import reduce
+import math
 
 
-# Returns the factorial of a number without using recursion
-def factorial(n):
-    return list_product([x for x in range(n, 0, -1)])
-
-
-# Returns the product of a list.
-def list_product(arr):
-    return reduce(lambda x, y: x * y, arr)
-
-
-# Returns the sum of the digits of a number.
-def sum_of_digits(n):
-    return sum([int(x) for x in str(n)])
+def factorial_digit_sum(n):
+    '''Returns the sum of all digits of a factorial'''
+    factorial_string = str(math.factorial(n))
+    return sum([int(x) for x in factorial_string])
 
 
 if __name__ == '__main__':
-    print(sum_of_digits(factorial(100)))
+    import time
+    start_time = time.time()
+    print(factorial_digit_sum(100))
+    print('Time: ' + str(time.time() - start_time) + ' seconds')

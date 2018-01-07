@@ -1,27 +1,21 @@
-# Returns the factorial of a number without using recursion
-def factorial(n):
-    if n == 0:
-        return 1
-    product = n
-    for i in range(n - 1, 0, -1):
-        product = product * i
-    return product
+import math
 
 
-# Turn a number into a list of digits.
-def int_to_list(n):
-    return [int(x) for x in str(n)]
+def digit_factorials(n):
+    '''Returns a list of all digit_factorials up to n'''
 
 
-# Returns a list of the factorials of the digits in 'n'.
-def factorial_list(n):
-    return [factorial(x) for x in int_to_list(n)]
+    def is_digit_factorial(n):
+        digit_factorial = sum([math.factorial(int(x)) for x in str(n)])
+        return digit_factorial == n
 
 
-# Returns a list of numbers that equal the sum of the factorials of their digits up to 'max'.
-def digit_factorials(max):
-    return [x for x in range(3, max) if x == sum(factorial_list(x))]
+    return [x for x in range(3, n) if is_digit_factorial(x)]
+
 
 
 if __name__ == '__main__':
+    import time
+    start_time = time.time()
     print(sum(digit_factorials(100000)))
+    print('Time: ' + str(time.time() - start_time) + ' seconds')
