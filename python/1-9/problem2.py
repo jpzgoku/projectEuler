@@ -1,5 +1,12 @@
 def even_fibonacci_numbers(n):
-    '''Returns an list of even fibonacci numbers up to x.'''
+    '''Returns a list of even fibonacci numbers under 'n'.
+
+    Args:
+        n: The max value of a fibonacci number to be included.
+
+    Returns:
+        A list of all the even fibonacci numbers under 'n'
+    '''
     fib = [1,1]
     while True:
         new_val = fib[-1] + fib[-2]

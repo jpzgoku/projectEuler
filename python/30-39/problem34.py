@@ -1,4 +1,4 @@
-import math
+from math import factorial
 
 
 def digit_factorials(n):
@@ -6,7 +6,7 @@ def digit_factorials(n):
 
 
     def is_digit_factorial(n):
-        digit_factorial = sum([math.factorial(int(x)) for x in str(n)])
+        digit_factorial = sum([factorial(int(x)) for x in str(n)])
         return digit_factorial == n
 
 

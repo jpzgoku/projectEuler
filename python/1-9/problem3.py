@@ -1,12 +1,20 @@
-import math
-
+from math import ceil
 
 def is_it_prime(n):
-    half = math.ceil(n / 2) + 1
+    half = ceil(n / 2) + 1
     for i in range(2, half):
         if n % i == 0:
             return False
     return True
+
+
+# def is_prime(n):
+#     divisors = (x for x in range(2, n) if n % i == 0)
+#     try:
+#         next(divisors)
+#         return False
+#     except:
+#         return True
 
 
 def prime_factors(num):
@@ -26,6 +34,11 @@ def prime_factors(num):
     return pfs
 
 
+def main():
+    pf = prime_factors(600851475143)
+    print(pf)
+    print(max(pf))
+
+
 if __name__ == '__main__':
-    print(prime_factors(600851475143))
-    print(max(prime_factors(600851475143)))
+    main()

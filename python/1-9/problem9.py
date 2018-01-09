@@ -1,11 +1,11 @@
-import math
+from math import sqrt
 
 
 def special_pythagorean_triplet(num):
     for a in range(1, num):
         for b in range(a, num):
             c_sum = a**2 + b**2
-            c = math.sqrt(c_sum)
+            c = sqrt(c_sum)
             if not c.is_integer():
                 continue
             if a + b + c == num:
