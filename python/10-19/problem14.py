@@ -1,39 +1,47 @@
-import time
-start_time = time.time()
+'''Creates a callable class to find the longest collatz sequence up to ``n``.
+Maintains state between calls so you don't have to do the same calculations over again.
+
+Usage:
+    longest = LongestCollatzSequence()
+    longest(1000000)
+    longest(999998)
+    longest(14)
+'''
+
+class LongestCollatzSequence:
+
+    def __init__(self):
+        self._cache = {}
 
 
-def longest_collatz_sequence(max):
+    def __call__(self, n):
+        """When instantiated the __call__ method will act like a normal function."""
+        for i in range(1, n):
+            counter = 1
+            self._collatz(i, counter, i)
+        collatz_sequence = {item: self._cache[item] for item in self._cache if item <= n}
+        return max(collatz_sequence, key=collatz_sequence.get)
 
-    def collatz(n):
-        answer = [n]
-        num = n
-        while not num == 1:
-            if num % 2 == 0:
-                num = num // 2
-            else:
-                num = (3 * num) + 1
-            answer.append(num)
-        return answer
 
-    output = []
-    for i in range(1, max):
-        x = collatz(i)
-        if len(x) > len(output):
-            output = x
-    return output[0]
+    def _collatz(self, origional, counter, new_val):
+        if new_val == 1:
+            self._cache[origional] = counter
+            return
+        elif new_val in self._cache:
+            counter += self._cache[new_val] - 1
+            self._cache[origional] = counter
+            return
+        elif new_val % 2 == 0:
+            counter += 1
+            self._collatz(origional, counter, new_val // 2)
+        else:
+            counter += 1
+            self._collatz(origional, counter, 3 * new_val + 1)
 
 
 if __name__ == '__main__':
-    print(longest_collatz_sequence(1000000))
-    print(time.time() - start_time)
-
-
-'''
-To make it faster you could somehow have the computer
-remember the lenght of the sequence for every number
-that it has already computed. For example if the computer
-runs into 13 then it knows that the sequence will end
-in 9 more numbers. So then the computer won't have to do
-those nine computations. This will cut down the time when
-the sequences get really long.
-'''
+    longest = LongestCollatzSequence()
+    from timeit import timeit
+    print(timeit(setup="from __main__ import longest", stmt="print(longest(1000000))", number=1))
+    print(timeit(setup="from __main__ import longest", stmt="print(longest(999998))", number=1))
+    print(timeit(setup="from __main__ import longest", stmt="print(longest(14))", number=1))

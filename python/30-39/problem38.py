@@ -1,38 +1,44 @@
-# Turn a number into a list of digits.
-def int_to_list(n):
-    return[int(x) for x in str(n)]
+def pandigital_multiple_generator(n):
+    pan = n
+    for i in range(2, 10):
+        new_val = n * i
+        pan = int(str(pan) + str(new_val))
+        yield pan
 
 
-# Changes a list of numbers into an integer
-def list_to_int(arr):
-    return int(''.join(map(str, arr)))
+def is_9_digit_pandigital(n):
+    st = str(n)
+    return '0' not in st and len(st) == 9 and len(set(st)) == 9
 
 
-# Multiplies 'n' by [1..10], concatenates those results and returns
-# the concatenated number when it reaches at least nine digits long.
-def nine_digits(n):
+def pandigital_multiples(m=10000):
+    """Returns the largest pandigital multiple up to ``m``.
+
+    Args:
+        m: Maximum value to search for pandigital multiples. Defaults to 10000.
+
+    Returns:
+        Largest pandigital multiple.
+    """
+    m = min(m, 10000)
     answer = []
-    for i in range(10):
-        if len(answer) >= 9:
-            return list_to_int(answer)
-        answer = answer + int_to_list(n * i)
+    for i in range(1, m):
+        pan_gen = pandigital_multiple_generator(i)
+
+        while True:
+            pan_num = next(pan_gen)
+            if is_9_digit_pandigital(pan_num):
+                answer.append(pan_num)
+                break
+            elif len(str(pan_num)) > 9:
+                break
+    return max(answer)
 
 
-# Checks to see if a number is a 9 digit pandigital number.
-def pandigital_check(n):
-    l = int_to_list(n)
-    if len(l) != 9 or len(set(l)) != 9:
-        return False
-    for d in l:
-        if d == 0:
-            return False
-    return True
-
-
-# Returns a list of all the pandigital multiples.
-def pandigital_multiples():
-    return [x for x in range(1, 10001) if pandigital_check(nine_digits(x))]
+def main():
+    from timeit import timeit
+    print(timeit(setup="from __main__ import pandigital_multiples", stmt="print(pandigital_multiples())", number=1))
 
 
 if __name__ == '__main__':
-    print(max(pandigital_multiples()))
+    main()

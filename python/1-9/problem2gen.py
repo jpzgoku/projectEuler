@@ -34,10 +34,8 @@ def even_fibonacci_sum(n):
 
 
 def main():
-    import time
-    start_time = time.time()
-    print(even_fibonacci_sum(4000000))
-    print('Time: ' + str(time.time() - start_time) + ' seconds')
+    from timeit import timeit
+    print(timeit(setup="from __main__ import even_fibonacci_sum", stmt="print(even_fibonacci_sum(4000000))", number=1))
 
 
 if __name__ == '__main__':
