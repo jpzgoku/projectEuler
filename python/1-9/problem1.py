@@ -6,13 +6,13 @@ Usage:
 '''
 
 def multiples_of(*args):
-    '''Returns a closure of a function that checks for any multiples of *args
+    '''Returns a closure of a function that checks for any multiples of ``*args``.
 
     Args:
         *args: Any amount of numbers.
 
     Returns:
-        A function with that makes a list of numbers up to 'n' that are multiples of any of the numbers previously provided by the args argument.
+        A function with that makes a list of numbers up to ``n`` that are multiples of any of the numbers previously provided by the args argument.
     '''
 
     def inner(n):
