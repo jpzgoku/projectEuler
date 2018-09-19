@@ -1,7 +1,5 @@
-import math
-
-def is_it_prime(n):
-	half = math.ceil(n / 2) + 1
+def is_prime(n):
+	half = (n // 2) + 1
 	for i in range(2, half):
 		if n % i == 0:
 			return False
@@ -12,7 +10,7 @@ def prime_factors(num):
     pfs = []
 
     def find_prime_factors(num):
-        if is_it_prime(num):
+        if is_prime(num):
             return pfs.append(num)
         for i in range(2, num):
             if num % i == 0:
@@ -25,40 +23,42 @@ def prime_factors(num):
     return pfs
 
 
-def distinct(arr):
-    return True if len(arr) == len(set(arr)) else False
+def distinct_prime_factors(dis):
+    """Finds the first ``dis`` consecutive numbers to have distinct prime factors.
+
+    Args:
+        dis: The number of consecutive distinct prime factors to look for that have ``dis`` prime factors.
+
+    Returns:
+        A list of the first consecutive distinct prime factors.
+    """
+    answer = []
+    n = 2
+
+    while len(answer) < dis:
+        pfs = exponents(prime_factors(n))
+        if len(pfs) == dis == len(set(pfs)):
+            answer.append((n, pfs))
+        else:
+            answer = []
+        n += 1
+    return answer
 
 
-# If the first two values are the same then it makes combines them into an exponetial value.
-def test(arr):
-    if len(arr) == 1:
-        return arr
-    if len(arr) > 2:
-        if arr[0] == arr[1] and arr[0] == arr[2]:
-            return arr
-    for i in range(len(arr) - 1):
-        if arr[i] == arr[i + 1]:
-            return arr[:i] + [str(arr[i]) + "^2"] + arr[i + 2:]
+def exponents(arr):
+    original = arr[:]
+    counter = 0
+    while counter < len(arr) - 1:
+        if arr[counter] > arr[counter + 1]:
+            return original
+        if arr[counter] == arr[counter + 1]:
+            del arr[counter + 1]
+            arr[counter] *= arr[counter]
+        else:
+            counter += 1
     return arr
 
 
-def distinct_prime_factors(n):
-    answer = []
-    for i in range(1, 1000000):
-        if distinct(test(prime_factors(i))):
-            if len(test(prime_factors(i))) == n:
-                answer.append(i)
-                if len(answer) == n:
-                    return answer
-            else:
-                answer = []
-        else:
-             answer = []
-
-
 if __name__ == '__main__':
-	# print(test(prime_factors(134043)))
-	# print(test(prime_factors(134044)))
-	# print(test(prime_factors(134045)))
-	# print(test(prime_factors(134046)))
-	print(distinct_prime_factors(4))
+    from timeit import timeit
+    print(timeit(setup="from __main__ import distinct_prime_factors", stmt="print(distinct_prime_factors(3))", number=1))

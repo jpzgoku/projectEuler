@@ -18,7 +18,7 @@ def amicable_numbers(max):
 
     for a in range(2, max):
         b = d(a)
-        if d(b) == a and a != b:
+        if d(b) == a != b: # same as: d(b) == a and a != b
             answer.add(a)
             answer.add(b)
     return answer

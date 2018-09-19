@@ -5,8 +5,8 @@ def pandigital_products():
         string = str(tup[0]) + str(tup[1]) + str(tup[2])
         if '0' in string:
             return False
-        return len(set(string)) == 9 and len(string) == 9
-    
+        return len(set(string)) == 9 == len(string) # len(set(string)) == 9 and len(string) == 9
+
 
     two_digits = range(2, 100)
     four_digits = range(2, 10000)

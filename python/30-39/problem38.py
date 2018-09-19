@@ -8,7 +8,7 @@ def pandigital_multiple_generator(n):
 
 def is_9_digit_pandigital(n):
     st = str(n)
-    return '0' not in st and len(st) == 9 and len(set(st)) == 9
+    return '0' not in st and len(st) == 9 == len(set(st)) # len(st) == 9 and len(set(st)) == 9
 
 
 def pandigital_multiples(m=10000):

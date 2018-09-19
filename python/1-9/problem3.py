@@ -1,20 +1,9 @@
-from math import ceil
-
 def is_it_prime(n):
-    half = ceil(n / 2) + 1
+    half = (n // 2) + 1
     for i in range(2, half):
         if n % i == 0:
             return False
     return True
-
-
-# def is_prime(n):
-#     divisors = (x for x in range(2, n) if n % i == 0)
-#     try:
-#         next(divisors)
-#         return False
-#     except:
-#         return True
 
 
 def prime_factors(num):

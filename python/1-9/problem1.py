@@ -1,4 +1,5 @@
-'''Create a function that creates a list of numbers that are multiples of a group of numbers
+'''``multiples_of`` is a function factory.
+It creates a function that can be called to create a list of numbers that are multiples ``*args``.
 
 Usage:
     three_and_five = multiples_of(3, 5)
@@ -12,7 +13,7 @@ def multiples_of(*args):
         *args: Any amount of numbers.
 
     Returns:
-        A function with that makes a list of numbers up to ``n`` that are multiples of any of the numbers previously provided by the args argument.
+        A function that makes a list of numbers up to ``n`` that are multiples of any of the numbers previously provided by the args argument.
     '''
 
     def inner(n):
